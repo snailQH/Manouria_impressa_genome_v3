@@ -4,7 +4,7 @@ The scripts, environments and protocol log behind the chromosome-level, haplotyp
 
 **How to cite the data:** the Zenodo archive of this repository (DOI pending; one DOI for Data files 1–13 and the pipeline).
 
-**Paper:** Wang J, Li Q. A chromosome-level, haplotype-resolved genome assembly of the impressed tortoise, *Manouria impressa*. bioRxiv 2026, doi:10.1101/2025.03.10.642296 (version 2); Data Note submitted to *BMC Genomic Data*. This repository is private until the Data Note is published.
+**Paper:** Wang J, Li Q. A chromosome-level, haplotype-resolved genome assembly of the impressed tortoise, *Manouria impressa*. bioRxiv 2026, doi:10.1101/2025.03.10.642296 (version 2); Data Note submitted to *BMC Genomic Data*.
 
 ## The assembly in numbers
 | | Mimp_v3 (primary) | hap1 | hap2 |
