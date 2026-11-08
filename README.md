@@ -2,7 +2,7 @@
 
 The scripts, environments and protocol log behind the chromosome-level, haplotype-resolved genome assembly of the impressed tortoise (*Manouria impressa*, Testudinidae): PacBio HiFi + Hi-C of one adult female (IT-1), RNA-seq-supported gene annotation, two Hi-C-phased haplotype assemblies and the mitochondrial genome. Every statistic in the paper is computed by a script in this repository from the released files.
 
-**How to cite the data:** the Zenodo archive of this repository (DOI pending; one DOI for Data files 1–13 and the pipeline).
+**How to cite the data:** Zenodo archive of this repository, doi:10.5281/zenodo.24056325 (concept DOI, resolves to the latest release; one DOI for Data files 1–13 and the pipeline).
 
 **Paper:** Wang J, Li Q. A chromosome-level, haplotype-resolved genome assembly of the impressed tortoise, *Manouria impressa*. bioRxiv 2026, doi:10.1101/2025.03.10.642296 (version 2); Data Note submitted to *BMC Genomic Data*.
 
@@ -26,7 +26,7 @@ The scripts, environments and protocol log behind the chromosome-level, haplotyp
 | RNA-seq heart (IT3) / lung (IT4) | GSA CRA024586, runs CRR1747397 / CRR1747398 (BioSamples SAMC4973532 / SAMC4976828) |
 | Reference assembly + annotation | NGDC GWH GWHHIVU00000000.2 (version .1 = preliminary provider assembly) |
 | hap1, hap2, mitogenome | GWH, same BioProject (accessions pending) |
-| Data files 1–13 of the Data Note (extended description PDF, tables, curation evidence, QC, haplotype/mitogenome/synteny/repeat/annotation results, this pipeline) | `data_files/` here; archived on Zenodo with each release (DOI pending) |
+| Data files 1–13 of the Data Note (extended description PDF, tables, curation evidence, QC, haplotype/mitogenome/synteny/repeat/annotation results, this pipeline) | `data_files/` here; Zenodo doi:10.5281/zenodo.24056325 |
 
 ## Layout
 ```
