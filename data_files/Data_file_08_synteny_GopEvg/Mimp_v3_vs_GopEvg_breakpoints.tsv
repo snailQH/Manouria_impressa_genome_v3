@@ -1,0 +1,8 @@
+chromosome	position	type	detail	inside_contig	hic_pairs_across_2Mb	expected_if_contiguous	ratio	bg_ratio	verdict
+chr2	165364003	inter-chromosomal	GopEvg_chr2 (31.9 Mb) | GopEvg_chr19 (1.5 Mb)	ptg000008l	714	970	0.74	53.1	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.74 of contiguous expectation, 53x background
+chr2	166815180	inter-chromosomal	GopEvg_chr19 (1.5 Mb) | GopEvg_chr2 (85.9 Mb)	ptg000008l	320	970	0.33	23.8	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.33 of contiguous expectation, 24x background
+chr11	7437048	strand switch (inversion candidate)	GopEvg_chr11 -→+	ptg000002l	731	970	0.75	54.4	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.75 of contiguous expectation, 54x background
+chr11	10333917	order jump (translocation candidate)	GopEvg_chr11 ref gap 8.0 Mb	ptg000002l	482	970	0.50	35.9	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.50 of contiguous expectation, 36x background
+chr12	33427576	inter-chromosomal	GopEvg_chr14 (33.2 Mb) | GopEvg_chr21 (1.5 Mb)	ptg000055l	237	970	0.24	17.6	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.24 of contiguous expectation, 18x background
+chr12	40416919	order jump (translocation candidate)	GopEvg_chr21 ref gap 5.4 Mb	ptg000063l	636	970	0.66	47.3	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.66 of contiguous expectation, 47x background
+chr19	21922342	strand switch (inversion candidate)	GopEvg_chr17 +→-	ptg000121l	381	970	0.39	28.4	continuous in Mimp_v3: one HiFi contig spans the breakpoint; Hi-C across = 0.39 of contiguous expectation, 28x background

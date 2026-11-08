@@ -1,0 +1,19 @@
+# BUSCO version is: 5.8.0 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2024-01-08, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /data2/projects/Chitin_Metabolism_Analysis/01.Genome_Assembly/new-version/05_annotation/Mimp_v3/06_final_geneset/proteins.longest.faa
+# BUSCO was run in mode: proteins
+
+	***** Results: *****
+
+	C:97.6%[S:95.8%,D:1.9%],F:1.4%,M:1.0%,n:3354	   
+	3275	Complete BUSCOs (C)			   
+	3212	Complete and single-copy BUSCOs (S)	   
+	63	Complete and duplicated BUSCOs (D)	   
+	47	Fragmented BUSCOs (F)			   
+	32	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	python: sys.version_info(major=3, minor=13, micro=16, releaselevel='final', serial=0)
+	busco: 5.8.0

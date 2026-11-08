@@ -1,0 +1,76 @@
+# Data file 13 pipeline
+
+Complete analysis pipeline: Slurm and Python scripts, protocol log with every parameter and result, software versions, workflow description.
+
+Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC4973488 = liver DNA libraries; RNA-seq BioSamples SAMC4973532 heart, SAMC4976828 lung). Produced by the pipeline in Data file 13 (scripts/genome_v3). Scripts are numbered by step; PROTOCOL_v3.md is the chronological log; software_versions.tsv is generated from the conda environments and containers; the eight conda environments are exported as *.yml (conda env export --no-builds; recreate with conda env create -f).
+
+| file | bytes | md5 |
+|---|---|---|
+| 09_telomere.sbatch | 773 | 8971ab714f0452218cc3c6f8fff154fc |
+| 06_braker3.sbatch | 2,474 | d3d7c4a282b946969bb1ace97533fda2 |
+| 11_hap_divergence.sbatch | 1,627 | 2f03843346ce0e182dad812faa4ca2c4 |
+| 06d_trna_filter.sbatch | 1,114 | 7dbefd18a597f975f2c8da488eb6ac19 |
+| 06b_functional.sbatch | 3,725 | 5b47a768fed88ff43d1509fd3b963132 |
+| 06h_post_geneset.sbatch | 2,520 | 602d939bbda749109cf07014c076e6b3 |
+| 12_repeat_landscape.sbatch | 985 | be91a3247f2b3b8d852b9dc40f8fd1ab |
+| 07d_fcs_gx.sbatch | 1,060 | d864c54c2506772737b1a4cc06088277 |
+| 06c_ncrna.sbatch | 1,596 | c9b3faead9a2db6a153b3948de6ce6a1 |
+| 07_fcs_mito.sbatch | 2,289 | 97b6850697a63ea4c39660d69e761a1b |
+| 05b_mask_curated.sbatch | 1,977 | 5d05ec47fa5b1c75157e6156909c2565 |
+| 06f_geneset_decision.sbatch | 4,835 | e836fa59921336e8f139c022f85acbc9 |
+| 08_haplotype_release.sbatch | 2,323 | 822296ad2a22e7bb7c867f0c725db45d |
+| 07e_mito_verify.sbatch | 2,094 | bad2a86cc0cfa7fde7862c42890840ba |
+| 07a_fcs_adaptor.sbatch | 923 | 82f8e0bc427fd07aa480b48451e3f901 |
+| 14_pretext_render.sbatch | 1,204 | 7134b1e07dcbbceb592cde0521d9f719 |
+| 04_qc.sbatch | 1,878 | ec11bffc0b09d5e7d4831a076ad7a33d |
+| 06g_final_geneset.sbatch | 10,879 | beb5712f7e3d98a7bc96a88c46da2355 |
+| 10_compare_v2.4.sbatch | 2,089 | bcac63498580cbce19020f14544e0cc0 |
+| 07c_mitohifi.sbatch | 1,293 | da94ea7c6cbb65a44795c596cd797d33 |
+| 04b_merqury.sbatch | 1,021 | 111c9f66ad1fcb5b4b5ac176663d78b0 |
+| 13_fcs_clean.sbatch | 6,775 | 60da816aea94a3ceb6753453994edd20 |
+| 05c_fix_softmask.sbatch | 2,770 | 9d1d34edced47df4a7077b928b440c81 |
+| 16_synteny_rearrangements.sbatch | 1,041 | f053f7ce5719ae524ec9fc0e9b0a9cc1 |
+| 03d_synteny.sbatch | 4,366 | 0f03b9f4ab0dbf693600f2e0b927f55b |
+| 03b_scaffold_haphic.sbatch | 1,706 | 26b7203388c08c838d36a2ac30a3f6c4 |
+| 07b_fcs_only.sbatch | 1,430 | dd3807170f2752cb0e3c65b690963125 |
+| 00_raw_stats.sbatch | 1,666 | 0be290dc58e14cf578561f38599a9f01 |
+| 03_scaffold_yahs.sbatch | 1,939 | dd8d8823d069798fcf075016b7af022c |
+| 03_hic_map.sbatch | 1,609 | bacd9cf0edc86af11719638540727b84 |
+| 02_hifiasm.sbatch | 1,133 | 2581a831d3b6f4e5c2026be176e28231 |
+| 08b_mito_screen.sbatch | 2,241 | ff090bd4919541d99ddd862d77175b63 |
+| 05_repeats.sbatch | 2,164 | 4faf43dcf5bf180e5537fa0509227a81 |
+| 03c_contactmap.sbatch | 1,223 | a7d9020bb12d983e15d93bff7bebd51f |
+| 03e_verify_curation.sbatch | 1,499 | c5107eb06caafc849cb5730d3e0f8feb |
+| 01_hifi_prep.sbatch | 2,274 | beb7583c3edd0d8c268f978409daee45 |
+| 03f_hic_stats.sbatch | 2,041 | b5416e722248b3ff5b1ed3bf2e8046fb |
+| 04c_hifi_coverage.sbatch | 2,699 | 034e8040a7017b05fdd217933594f27b |
+| 06e_annotation_check.sbatch | 5,337 | 18fc4ec65a465d1c544473eed75fd0e7 |
+| join_qc.py | 7,063 | 97390a6383b906eb9ca569840e3f2c6a |
+| 12_repeat_landscape.py | 2,928 | ac29ceb1c27275d5c0663375a54747ef |
+| name_chromosomes.py | 2,476 | 2d601defa5c234aeae25181f880e50c1 |
+| make_manuscript_docx.py | 9,946 | cf191b5c6fb1e838148582afa8f9065f |
+| 09_telomere.py | 1,108 | 46eba0b32bf9d7bc79c5ce3524bec492 |
+| curation_contacts.py | 5,034 | db00bcf4a5eac1c47afed733d6ca4bbb |
+| 16_synteny_rearrangements.py | 6,792 | 1e37a1f0f37b7a57468bd7db2b89d5f5 |
+| apply_curation.py | 4,948 | 339e906f9230d2dc399f59f7d1b6ac00 |
+| asm_stats.py | 1,276 | dcbea278fa3dbca594c9dd18763683d6 |
+| make_manuscript_figs_tables.py | 27,347 | e0d1b265eba07fbf573f779f454e442a |
+| make_datafile1_pdf.py | 2,976 | 82cc305b215ef5ca1108c6f0133371d3 |
+| 17_mito_gb2gff3.py | 4,579 | 2f1aff51460a00d5ef21bef4a4ee39fd |
+| disk_watch.sh | 551 | 999592ee5f5207ea337c108d987d7204 |
+| fcs_gx_chain.sh | 1,400 | 03c2938a9f03d8d4c42e5c11eb64d128 |
+| collect_manuscript_inputs.sh | 5,203 | 0023cbd5b358d34b7fb265953c46db38 |
+| software_versions.sh | 2,236 | 11ca2ffb738ff14193932935545d0620 |
+| release_qc_chain.sh | 1,054 | fb605ba2ff2ad634c7889a9014995993 |
+| chain_annotation.sh | 828 | aa089511045cebe3cd53c75adf329002 |
+| assembly.yml | 2,705 | 22f8c4ac1cd1dba23d48aa924f1cb08f |
+| busco.yml | 5,433 | 44f5c76b8ac6ed656c5d62db08cab27a |
+| compleasm.yml | 2,346 | a3adf70091a8fb99c30ba58df36d0fa8 |
+| eggnog.yml | 1,326 | ff8ee507ec652dee4b072a97691ddb54 |
+| annot.yml | 188 | 1ff7bdd79d5801136be2eca3dfac363a |
+| haphic.yml | 1,337 | c4f3cc8013d33f59a05d773414d814ab |
+| ncrna.yml | 5,875 | 590b56190882cd0c008f5eee3ff5e196 |
+| genomeqc.yml | 3,215 | 2c43df286b81004c140752c86ad34217 |
+| PROTOCOL_v3.md | 39,593 | 7754bb045109fa52dd9097e7d97c315e |
+| software_versions.tsv | 809 | 9ca52234240e8ed7a161e1d2bf8e1f30 |
+| genome_assembly_workflow.html | 39,819 | b50aa80ad0db6e342f9d3c1b32b443d6 |

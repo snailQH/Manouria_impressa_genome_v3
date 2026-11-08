@@ -1,0 +1,308 @@
+<title>HiFi + Hi-C Genome Assembly Workflow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* One reading column. The process is a vertical chain of numbered steps grouped into lanes
+   (data, contigs, scaffolds, curation, QC, annotation, release). Same idiom as the CellAuth workflow pages. */
+:root{
+  --bg:#f3f3ef; --panel:#ffffff; --ink:#1c1f1a; --muted:#5e655b; --rule:#d9dad1;
+  --hifi:#2b5d8c; --hifi-soft:#dde8f2;     /* long reads / sequence */
+  --hic:#8a4b1f;  --hic-soft:#f1e5d9;      /* Hi-C / contact */
+  --ann:#3f6b3a;  --ann-soft:#e2eddf;      /* annotation */
+  --pass:#1f7a3f; --pass-soft:#dff1e5; --review:#9a6200; --review-soft:#fbefd6; --fail:#a8322b; --fail-soft:#f8e1df;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif; --f-body:"IBM Plex Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141613; --panel:#1b1e19; --ink:#e6e8e1; --muted:#a2a99d; --rule:#30342d;
+  --hifi:#8db5df; --hifi-soft:#1d2d3d; --hic:#dba273; --hic-soft:#3a2818; --ann:#95c48d; --ann-soft:#1f3120;
+  --pass:#6fd08f; --pass-soft:#173826; --review:#f0b956; --review-soft:#3b2e12; --fail:#f08a82; --fail-soft:#3d1b19; color-scheme:dark; }}
+:root[data-theme="dark"]{
+  --bg:#141613; --panel:#1b1e19; --ink:#e6e8e1; --muted:#a2a99d; --rule:#30342d;
+  --hifi:#8db5df; --hifi-soft:#1d2d3d; --hic:#dba273; --hic-soft:#3a2818; --ann:#95c48d; --ann-soft:#1f3120;
+  --pass:#6fd08f; --pass-soft:#173826; --review:#f0b956; --review-soft:#3b2e12; --fail:#f08a82; --fail-soft:#3d1b19; color-scheme:dark; }
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--f-body)}
+.wrap{max-width:940px;margin:0 auto;padding:40px 20px 64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,5vw,44px);font-weight:700;letter-spacing:-.01em} h2{font-size:26px;font-weight:600} h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:70ch} code,.mono{font-family:var(--f-mono);font-size:.88em}
+code{background:var(--panel);border:1px solid var(--rule);border-radius:3px;padding:0 4px}
+.eyebrow{font:600 12px/1 var(--f-display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+section{display:grid;gap:18px;margin-top:56px} .lede{color:var(--muted);font-size:17px}
+header{display:grid;gap:14px} .facts{display:flex;flex-wrap:wrap;gap:8px 20px;color:var(--muted);font-size:13.5px} .facts b{color:var(--ink);font-weight:600}
+.toc{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px} .toc a{color:var(--hifi);text-decoration:none;border-bottom:1px dotted var(--rule)}
+.lane{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 18px}
+.lane-name{font:600 12px/1.3 var(--f-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:14px;position:sticky;top:0;align-self:start}
+.steps{display:grid;border-left:2px solid var(--rule)}
+.step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;padding:12px 0}
+.step .num{width:30px;height:30px;margin-left:-16px;border-radius:50%;background:var(--panel);border:2px solid var(--hifi);color:var(--hifi);display:grid;place-items:center;font:600 13px/1 var(--f-display)}
+.lane.hic .num{border-color:var(--hic);color:var(--hic)} .lane.ann .num{border-color:var(--ann);color:var(--ann)} .lane.decide .num{border-color:var(--ink);color:var(--ink)}
+.step .body{display:grid;gap:5px;min-width:0} .step .body p{color:var(--muted);font-size:14px}
+.step .cmd{font-family:var(--f-mono);font-size:12px;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:6px 8px;overflow-x:auto;white-space:pre}
+.step .out{font-family:var(--f-mono);font-size:12px;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:2px 6px;justify-self:start;overflow-wrap:anywhere}
+.step .out::before{content:"→ ";color:var(--muted)}
+.lane+.lane{margin-top:6px}
+.table-wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font:600 12px/1.3 var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)} tr:last-child td{border-bottom:none}
+.table-wrap table th:first-child,.table-wrap table td:first-child{padding-left:16px}
+.pill{display:inline-block;font:600 11.5px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:4px}
+.pill.pass{background:var(--pass-soft);color:var(--pass)} .pill.review{background:var(--review-soft);color:var(--review)} .pill.fail{background:var(--fail-soft);color:var(--fail)}
+.callout{border-left:3px solid var(--review);background:var(--review-soft);padding:12px 14px;border-radius:0 6px 6px 0;display:grid;gap:6px}
+.callout.bad{border-color:var(--fail);background:var(--fail-soft)}
+.figure{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:16px 20px;overflow-x:auto}
+.note{font-size:13.5px;color:var(--muted)} ul{margin:0;padding-left:20px;max-width:70ch} li{margin-bottom:4px}
+footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--rule);color:var(--muted);font-size:13px;display:grid;gap:6px}
+@media(max-width:640px){.lane{grid-template-columns:1fr}.lane-name{position:static;padding:8px 0 4px}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Reference-quality genome · PacBio HiFi + Hi-C + RNA-seq</div>
+  <h1>From raw reads to a chromosome-scale, annotated, reproducible genome</h1>
+  <p class="lede">The workflow we built for the <i>Manouria impressa</i> v3 reassembly, written as a protocol that transfers to any diploid vertebrate (and, with the noted changes, to other eukaryotes). Each step names the tool, the parameters that matter, what it hands to the next step, and the mistake we made there — so nobody makes it twice.</p>
+  <div class="facts"><span><b>Inputs</b> HiFi BAM/FASTQ · Hi-C PE reads · RNA-seq PE reads</span><span><b>Compute</b> Slurm, 64 CPU / 480 GB nodes</span><span><b>Wall time</b> ~5 days end to end, 1 person-day of attention</span><span><b>Scripts</b> <code>scripts/genome_v3/</code></span><span><b>Companion</b> run record of the <i>Manouria impressa</i> v3 project (PROTOCOL_v3.md)</span></div>
+  <nav class="toc"><a href="#principles">Principles</a><a href="#flow">Flowchart</a><a href="#steps">Steps</a><a href="#curation">Quantitative curation</a><a href="#qc">QC thresholds</a><a href="#env">Environments</a><a href="#pitfalls">Pitfalls</a><a href="#adapt">Adapting to another species</a><a href="#repro">Reproducing a run</a></nav>
+</header>
+
+<section id="principles">
+  <h2>Five rules the workflow enforces</h2>
+  <ul>
+    <li><b>Count the data from the files, not the vendor report.</b> Reads, bases, platform (from read headers), coverage against both the k-mer genome-size estimate and the final assembly. Every number in Table 2 of a Data Descriptor comes from step 0.</li>
+    <li><b>One script per step, versions pinned, job IDs logged.</b> The protocol log (<code>PROTOCOL_v3.md</code>) is written as the work happens and becomes the Methods. Failed attempts stay in it with their cause.</li>
+    <li><b>Scaffolding decisions are measured, not eyeballed.</b> Every join — the scaffolder's and ours — is scored by the same Hi-C statistic, calibrated on the scaffolder's own joins and on one join verified by eye.</li>
+    <li><b>Anomalies get an explanation before release.</b> Zero-coverage runs are classified (artefact vs. heterozygous duplication vs. unmappable repeat) from unfiltered read depth and haplotype comparison, and reported.</li>
+    <li><b>The previous assembly is a comparison column, never an input.</b> Independence from earlier builds is what lets the new release stand on its own statistics.</li>
+  </ul>
+</section>
+
+<section id="flow">
+  <h2>Flowchart</h2>
+  <div class="figure">
+<pre class="mermaid">
+%%{init:{"theme":"base","themeVariables":{"background":"#ffffff","primaryColor":"#ffffff","primaryTextColor":"#1c1f1a","primaryBorderColor":"#c7c9bf","lineColor":"#5e655b","fontFamily":"IBM Plex Sans, sans-serif","fontSize":"13px","clusterBkg":"#f3f3ef","clusterBorder":"#c7c9bf"}}}%%
+flowchart TD
+  subgraph D["0 · Data"]
+    direction TB
+    D1["Raw-data accounting<br/><tt>00_raw_stats</tt>"] --> D2["HiFi Q20 filter + adapter screen<br/><tt>01_hifi_prep</tt>"] --> D3["meryl k=21 → GenomeScope2"]
+  end
+  subgraph C["1 · Contigs"]
+    direction TB
+    C1["hifiasm --h1/--h2<br/>primary + hap1 + hap2<br/><tt>02_hifiasm</tt>"]
+  end
+  subgraph S["2 · Scaffolds"]
+    direction TB
+    S1["chromap → SAM on disk<br/>name-sorted BAM / filtered BAM<br/><tt>03_hic_map</tt>"] --> S2["YaHS (primary)<br/>HapHiC (hap1, hap2, primary)"] --> S3["Pretext maps + synteny to a<br/>chromosome-level relative<br/><tt>03c, 03d</tt>"]
+  end
+  subgraph U["3 · Curation"]
+    direction TB
+    U1["Score every join<br/><tt>join_qc.py</tt>"] --> U2["Candidate adjacencies<br/><tt>curation_contacts.py</tt>"] --> U3["Apply breaks / joins<br/><tt>apply_curation.py</tt>"] --> U4["Remap + re-score<br/><tt>03e_verify</tt>"]
+  end
+  subgraph Q["4 · QC"]
+    direction TB
+    Q1["compleasm / BUSCO<br/>Merqury QV + phasing<br/><tt>04_qc, 04b</tt>"] --> Q2["HiFi coverage track<br/>zero / high runs explained<br/><tt>04c</tt>"] --> Q3["FCS-adaptor / FCS-GX (gated on a verified DB)<br/>MitoHiFi with a pre-fetched reference<br/>mito screen of every nuclear file<br/><tt>07, 07b-d, 08b</tt>"]
+  end
+  subgraph A["5 · Annotation"]
+    direction TB
+    A1["RepeatModeler2 → RepeatMasker<br/><tt>05_repeats</tt>"] --> A2["HISAT2 RNA-seq → BRAKER3<br/>(+ OrthoDB proteins)<br/><tt>06_braker3</tt>"] --> A3["gene-set stats · BUSCO-protein · eggNOG-mapper<br/>tRNAscan-SE · barrnap<br/><tt>06b, 06c</tt>"]
+  end
+  subgraph R["6 · Release"]
+    direction TB
+    R1["Name + orient chromosomes<br/>haplotype release files · telomeres<br/>liftover table · versions · md5<br/>haplotype divergence · repeat landscape · EBP notation"] --> R2["Audit vs reviews + journal rules<br/>Tables 1–3 and Methods from PROTOCOL"] --> R3["Deposit: reference (new version),<br/>hap1/hap2, mitogenome, RNA-seq"]
+  end
+  D --> C --> S --> U --> Q --> A --> R
+  C -. hap1/hap2 .-> S
+</pre>
+  </div>
+</section>
+
+<section id="steps">
+  <h2>The steps, in order</h2>
+  <p>Numbers in parentheses are what each step took on a 2.4-Gb genome with 30× HiFi and 33 M Hi-C pairs, on one 64-CPU node.</p>
+
+  <div class="lane">
+    <div class="lane-name">Data</div>
+    <div class="steps">
+      <div class="step"><span class="num">0</span><div class="body"><h3>Raw-data accounting (14 min)</h3><p>Count every library from the files: reads, bases, mean and N50 read length, platform from the BAM/FASTQ headers, SMRT cells, Hi-C ligation-junction fraction (GATCGATC for MboI/DpnII). Record what does <i>not</i> exist (e.g. no short reads for polishing).</p><div class="cmd">samtools view hifi.bam | awk '{L=length($10); ...}'      # per-read length + rq tag + movie
+zcat hic_R1.fq.gz | head -400000 | awk 'NR%4==2' | grep -c GATCGATC</div><span class="out">raw_stats table · platform/kit from @RG · coverage = bases / genome size</span></div></div>
+      <div class="step"><span class="num">1</span><div class="body"><h3>HiFi preparation and k-mer survey (5 h, mostly extraction)</h3><p>Keep reads with CCS accuracy rq ≥ 0.99 (Q20); remove reads carrying the SMRTbell adapter (≤ 2 mismatches, the HiFiAdapterFilt criterion); count 21-mers with meryl; estimate size, heterozygosity, repeat fraction and error rate with GenomeScope2.</p><div class="cmd">samtools view -e '[rq]>=0.99' -b hifi.bam | samtools fastq -T rq - | pigz > hifi.q20.fq.gz   # NOT -0 /dev/null
+seqkit grep -s -m 2 -p ATCTCTCTCTTTTCCTCCTCCTCCGTTGTTGTTGTTGAGAGAGAT ... | seqkit seq -n -i > adapter_hits.ids
+meryl k=21 count output k21.meryl hifi.q20.filt.fq.gz; meryl histogram k21.meryl > k21.histo; genomescope2 -i k21.histo -p 2 -k 21</div><span class="out">hifi.q20.filt.fastq.gz · k21.meryl (reused by Merqury) · genomescope2/summary.txt</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane">
+    <div class="lane-name">Contigs</div>
+    <div class="steps">
+      <div class="step"><span class="num">2</span><div class="body"><h3>hifiasm in Hi-C-integrated mode (4 h 52 min, 119 GB RAM)</h3><p>One run yields the primary assembly and two phased haplotypes. Defaults; the only choice is to pass the Hi-C reads. For a genome with &lt; 0.5 % heterozygosity expect the haplotypes to be much less contiguous than the primary — that is normal.</p><div class="cmd">hifiasm -o IT1 -t 60 --h1 hic_R1.fq.gz --h2 hic_R2.fq.gz hifi.q20.filt.fastq.gz
+for g in hic.p_ctg hic.hap1.p_ctg hic.hap2.p_ctg; do gfatools gfa2fa IT1.$g.gfa > IT1.$g.fa; done</div><span class="out">IT1.hic.p_ctg.fa · IT1.hic.hap1.p_ctg.fa · IT1.hic.hap2.p_ctg.fa · hifiasm log (coverage peaks)</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane hic">
+    <div class="lane-name">Scaffolds</div>
+    <div class="steps">
+      <div class="step"><span class="num">3</span><div class="body"><h3>Map Hi-C once per assembly, to disk (25 min each)</h3><p>chromap with the Hi-C preset, MAPQ ≥ 1, PCR duplicates removed. Write SAM to a file — chromap aborts when streaming SAM to stdout. From the one SAM derive the two inputs scaffolders want: a name-sorted BAM (YaHS) and a <code>-F 3340</code> filtered BAM (HapHiC).</p><div class="cmd">chromap -i -r ctg.fa -o ctg.index
+chromap --preset hic -r ctg.fa -x ctg.index -q 1 --remove-pcr-duplicates -t 48 --SAM -1 R1 -2 R2 -o hic.sam
+samtools sort -n -o hic.namesorted.bam ...; samtools view -b -F 3340 -o hic.filtered.bam ...</div><span class="out">hic.namesorted.bam · hic.filtered.bam · chromap.log · <code>03f_hic_stats</code> → pairs sequenced, mapped, unique, valid (dedup + MAPQ ≥ 1 + proper), cis/trans — the "valid pairs" numbers reviewers ask for</span></div></div>
+      <div class="step"><span class="num">4</span><div class="body"><h3>Scaffold with two tools and compare (YaHS 52 min; HapHiC 10 min)</h3><p>YaHS on the primary; HapHiC on hap1, hap2 and the primary with the expected chromosome number. Strip the <code>/1</code> <code>/2</code> mate suffixes before YaHS or it reads zero pairs. Compare N50, join count and — decisively — the size distribution: a correct chromosome-scale assembly steps cleanly at the karyotype number.</p><div class="cmd">samtools view -h hic.namesorted.bam | awk 'BEGIN{OFS="\t"} /^@/{print;next} {sub(/\/[12]$/,"",$1);print}' | samtools view -b -o nosuffix.bam -
+yahs -o yahs -e GATC ctg.fa nosuffix.bam;  juicer pre -a -o out_JBAT yahs.bin yahs_scaffolds_final.agp ctg.fa.fai
+haphic pipeline ctg.fa hic.filtered.bam 26 --RE GATC --threads 48</div><span class="out">yahs_scaffolds_final.fa/.agp · out_JBAT.hic/.assembly (Juicebox) · haphic 04.build/scaffolds.fa</span></div></div>
+      <div class="step"><span class="num">5</span><div class="body"><h3>Contact maps and synteny (32 min + 41 min)</h3><p>PretextMap of each scaffold set (whole-genome and per-scaffold snapshots) and a minimap2 <code>asm20</code> alignment to the nearest chromosome-level reference. Synteny is a <i>guide</i> to where to look; the Hi-C decides. Expect it to mis-assign some small scaffolds.</p><div class="cmd">samtools view -h hic.bam | PretextMap -o map.pretext --sortby length --mapq 1; PretextSnapshot -m map.pretext --sequences "=all"
+minimap2 -x asm20 --secondary=no ref_chr.fa scaffolds.fa > aln.paf   # → scaffold_to_ref.tsv + dot plot</div><span class="out">FullMap.png · per-scaffold PNGs · dotplot.png · scaffold_to_ref.tsv (best chromosome, % aligned, second hit)</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane decide">
+    <div class="lane-name">Curation</div>
+    <div class="steps">
+      <div class="step"><span class="num">6</span><div class="body"><h3>Score every join (≈ 15 min, one BAM pass)</h3><p><code>join_qc.py</code>: for each contig boundary inside a scaffold, read pairs linking the 2 Mb before to the 2 Mb after, divided by (a) the expectation for contiguous sequence from the genome-wide distance-decay curve measured <i>inside</i> contigs and (b) the inter-scaffold background. Calibrate the thresholds on the scaffolder's own joins; verify one join by eye in Juicebox as a positive control.</p><div class="cmd">python3 join_qc.py hic_scaffold.bam scaffolds.agp scaffolds.fa.fai join_qc.tsv candidates.tsv</div><span class="out">join_qc.tsv: ratio, bg, verdict per join · candidate joins scored at both orientations</span></div></div>
+      <div class="step"><span class="num">7</span><div class="body"><h3>Find where unplaced scaffolds belong (≈ 10 min)</h3><p><code>curation_contacts.py</code>: for every small scaffold, pairs with each chromosome-scale scaffold (enrichment vs. size-expected), binned along the partner to see whether contact is end-concentrated (adjacent) or spread (haplotig / repeat compartment). For a suspected seam inside a scaffold: contact across the seam vs. within, by distance.</p><span class="out">curation_contacts.txt · worklist with verdicts</span></div></div>
+      <div class="step"><span class="num">8</span><div class="body"><h3>Apply, remap, re-score (edits seconds; verification ~45 min)</h3><p><code>apply_curation.py</code> breaks joins below the break threshold, joins candidates above the join threshold with orientation from contact asymmetry, writes AGP + FASTA + edit log. Then remap Hi-C and run <code>join_qc.py</code> again: new joins must fall inside the accepted distribution, broken ones must be gone. Open the final map once in Juicebox/PretextView.</p><div class="cmd">python3 apply_curation.py yahs.agp ctg.fa hic_scaffold.bam v3_curated
+sbatch 03e_verify_curation.sbatch v3_curated v3_curated.fa v3_curated.agp</div><span class="out">v3_curated.fa/.agp/.names.tsv/.edits.log · join_qc_v3_curated.tsv · curated map</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane">
+    <div class="lane-name">QC</div>
+    <div class="steps">
+      <div class="step"><span class="num">9</span><div class="body"><h3>Completeness and accuracy (QC 6 h; Merqury 1 h 45)</h3><p>compleasm on the current odb12 lineages and BUSCO on the legacy odb10 lineage the previous paper used (so the comparison is like-for-like); Merqury QV and k-mer completeness against the step-1 meryl database, for the primary alone and for hap1 + hap2 together (phasing / diploid completeness). Run Merqury only after the meryl DB is complete.</p><div class="cmd">compleasm run -a asm.fa -l vertebrata_odb12 -t 48;  busco -i asm.fa -l vertebrata_odb10 -m genome --offline
+merqury.sh reads.k21.meryl asm1.fa [asm2.fa] out      # symlinks, absolute $MERQURY</div><span class="out">compleasm summary · BUSCO short_summary · merqury.qv · merqury.completeness.stats</span></div></div>
+      <div class="step"><span class="num">10</span><div class="body"><h3>HiFi coverage track and anomaly triage (1 h 11)</h3><p>minimap2 <code>map-hifi</code> of all HiFi reads to the scaffolds; mean depth per 10-kb window at MAPQ ≥ 1; list zero-coverage runs (&lt; 5 % of median) and high runs (&gt; 2.5×). For each run on a chromosome: count reads at <i>all</i> MAPQ, and align the region to hap1/hap2. Reads present but MAPQ 0 + a half-length hap2 copy = heterozygous tandem duplication (keep, report); no reads at any MAPQ = unsupported sequence (trim).</p><span class="out">hifi.bam · depth10k.bed · zero_coverage_runs.bed · explanation per run</span></div></div>
+      <div class="step"><span class="num">11</span><div class="body"><h3>Contamination and organelle (adaptor 10 min; GX ≈ 2 h per assembly, 450 GB RAM; MitoHiFi ≈ 2 h)</h3><p>NCBI FCS-adaptor and FCS-GX on <b>every</b> assembly you will deposit (primary <i>and</i> both haplotypes). The GX database is ~470 GB: download it on a node with internet, verify every file size against the NCBI listing, write a <code>.complete</code> flag, and make the screening scripts refuse to run without it — a half-downloaded index does not error, it just misses things. Mitogenome from the HiFi reads with MitoHiFi; compute nodes usually cannot reach NCBI, so fetch the reference (<code>efetch</code> FASTA + GenBank of the closest published mitogenome) on the head node and pass it with <code>-f/-g</code>. Then align the mitogenome to each nuclear assembly: sequences ≥ 80 % covered are mitochondrial and are removed before deposit; partial hits inside chromosomes are NUMTs and stay.</p><div class="cmd">av_screen_x -O adaptor --euk asm.fa
+fcs.py screen genome --fasta asm.fa --out-dir gx --gx-db gxdb --tax-id 74924        # only when gxdb/.complete exists
+mitohifi.py -r hifi.fq.gz -f NC_011815.1.fasta -g NC_011815.1.gb -t 16 -o 2
+minimap2 -x asm10 asm.fa mito.fa | awk '$12>=30'  →  per-sequence % covered</div><span class="out">fcs_adaptor_report.txt · *.fcs_gx_report.txt · final_mitogenome.fasta/.gb + circular map → <code>06_release/Mimp_v3_mito.*</code> · *.mito_hits.tsv (sequences to drop)</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane ann">
+    <div class="lane-name">Annotation</div>
+    <div class="steps">
+      <div class="step"><span class="num">12</span><div class="body"><h3>Repeat library and soft-masking (RepeatModeler ≈ 3 days)</h3><p>RepeatModeler2 <code>-LTRStruct</code> on the scaffolds (start it as soon as scaffolds exist — it does not depend on curation; the library is re-applied to the curated sequence). RepeatMasker in two passes: the species library, then Dfam Tetrapoda on the masked output; union of both GFFs.</p><div class="cmd">singularity exec tetools.sif RepeatModeler -database genome -threads 60 -LTRStruct
+RepeatMasker -pa 15 -xsmall -gff -lib genome-families.fa genome.fa; RepeatMasker -pa 15 -xsmall -gff -species tetrapoda genome.fa.masked</div><span class="out">genome-families.fa · genome.softmasked.fa · repeats.gff · masked fraction + class table · repeat landscape (<code>12_repeat_landscape.py</code>: divergence histogram per class from the <code>.out</code> files)</span></div></div>
+      <div class="step"><span class="num">13</span><div class="body"><h3>Gene prediction with BRAKER3</h3><p>Align RNA-seq yourself with HISAT2 (inside the container, so versions are logged) and pass BAMs; proteins = OrthoDB v12 partition for the clade. BRAKER3 runs GeneMark-ETP + AUGUSTUS and outputs isoform-aware models. Test immediately: does the annotation recover a locus you know the old annotation missed?</p><div class="cmd">hisat2-build genome.softmasked.fa idx; hisat2 --dta -x idx -1 R1 -2 R2 | samtools sort -o IT3.bam
+braker.pl --genome=genome.softmasked.fa --prot_seq=orthodb_vertebrata.fa --bam=IT3.bam,IT4.bam --threads=48 --gff3 --busco_lineage=vertebrata_odb10</div><span class="out">braker.gff3 · braker.aa · braker.codingseq · BUSCO-protein score</span></div></div>
+      <div class="step"><span class="num">14</span><div class="body"><h3>Annotation QC, functional and non-coding annotation (≈ 8 h)</h3><p>Gene-set statistics from the GFF3 (genes, transcripts, exons/transcript, mean CDS/exon/intron length, single-exon fraction) — reviewers ask for these numbers, and BRAKER does not print them. BUSCO in protein mode on the longest isoform per gene. eggNOG-mapper (DIAMOND, tax scope Vertebrata, non-electronic GO) gives GO/KEGG/COG/Pfam and a preferred name in one pass; report the annotated fraction per database. tRNAscan-SE 2 (<code>-E</code>) and barrnap (<code>--kingdom euk</code>) for tRNA/rRNA. InterProScan and Rfam are optional extras (large downloads).</p><div class="cmd">busco -i proteins.longest.faa -l vertebrata_odb10 -m proteins
+emapper.py -i proteins.longest.faa -m diamond --tax_scope 7742 --go_evidence non-electronic
+tRNAscan-SE -E genome.fa; barrnap --kingdom euk genome.fa</div><span class="out">gene_set_stats.tsv · BUSCO-protein summary · eggnog.emapper.annotations · trna.out/.bed · rrna.gff</span></div></div>
+    </div>
+  </div>
+
+  <div class="lane decide">
+    <div class="lane-name">Release</div>
+    <div class="steps">
+      <div class="step"><span class="num">15</span><div class="body"><h3>Name, orient, package</h3><p>Chromosomes named by size (<code>chr1…chrN</code>) from this step on; orientation matched to the reference where syntenic; unplaced scaffolds keep scaffold names. Haplotypes are <i>not</i> chromosome-named (block-phased): rename by length (<code>h1_scaffold_N</code>), drop &lt; 1 kb, and align each to the primary for a correspondence table. Telomere arrays in the terminal 50 kb of every chromosome; a whole-genome alignment of the previous release for a liftover table; <code>software_versions.sh</code> exports every tool version from the environments and containers; md5 of every release file. Final statistics computed by <code>asm_stats.py</code> from the released FASTA + AGP — the only source for Table 2.</p><div class="cmd">name_chromosomes.py curated.fa curated.agp curated_vs_ref.paf 26 Mimp_v3
+08_haplotype_release.sbatch; 09_telomere.py Mimp_v3.fa; 10_compare_v2.4.sbatch; software_versions.sh</div><span class="out">Mimp_v3.fa/.agp/.names.tsv · Mimp_v3_hap1/2.fa + hapN_to_primary.tsv · telomeres.tsv · v2.4_to_v3_correspondence.tsv · software_versions.tsv · release_md5.txt</span></div></div>
+      <div class="step"><span class="num">15b</span><div class="body"><h3>Numbers that make the paper comparable (≈ 2 h)</h3><p>Three cheap analyses reviewers of genome notes expect. <b>Haplotype divergence</b>: align hap1 to hap2 and each to the primary (minimap2 <code>asm5 --cs</code>, <code>paftools.js call</code>) and report SNV, small-indel and SV (≥ 50 bp) densities — the number behind "two haplotypes", cross-checked against the k-mer heterozygosity. <b>Repeat landscape</b> from the RepeatMasker output (no re-run needed). <b>EBP quality notation</b> from Table 2: log₁₀ contig N50 · log₁₀ scaffold N50 · QV (here 7.8.Q67) and the fraction of the assembly in chromosomes. Optional for a Data Note, common in GigaScience genome notes: an orthology/species-tree analysis (OrthoFinder on ~8 proteomes) once the gene set exists.</p><div class="cmd">minimap2 -cx asm5 --cs hap2.fa hap1.fa | sort -k6,6 -k8,8n | paftools.js call -l 10000 -L 50000 -
+12_repeat_landscape.py genome_size landscape.png landscape.tsv rm_custom/*.out rm_dfam/*.out</div><span class="out">hap_divergence_summary.tsv · repeat_landscape.png/.tsv · EBP string in Table 2</span></div></div>
+      <div class="step"><span class="num">16</span><div class="body"><h3>Audit before you write</h3><p>Before drafting, check every reviewer point, every Data-Descriptor section and every deposition object against what actually exists on disk, and look for jobs that "completed" in seconds. Our audit found seven real gaps and two silent failures (MitoHiFi with no NCBI access; a contamination screen armed on a partial database) — all cheaper to fix a week before submission than in a second round of review.</p><span class="out">audit notes · author-supplied metadata · deposition plan</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="curation">
+  <h2>Quantitative curation — how a join is judged</h2>
+  <p>Two statistics per boundary, both from the scaffold-level Hi-C BAM (MAPQ ≥ 1, read-1 records, 100-kb bins, 2-Mb windows):</p>
+  <div class="table-wrap"><table>
+    <tr><th>statistic</th><th>definition</th><th>correct join</th><th>misjoin</th></tr>
+    <tr><td><b>ratio</b></td><td>observed pairs across the boundary ÷ expected for contiguous sequence (distance-decay curve measured inside contigs)</td><td>0.3–0.7 (contig ends are repeat-rich, so always below 1)</td><td>≈ 0–0.1</td></tr>
+    <tr><td><b>bg</b></td><td>observed ÷ inter-scaffold background for the same windows</td><td>≥ 11 (5th percentile of the scaffolder's joins; median ≈ 46)</td><td>≤ 5</td></tr>
+  </table></div>
+  <div class="table-wrap"><table>
+    <tr><th>decision</th><th>rule</th></tr>
+    <tr><td><span class="pill fail">break</span></td><td>existing join with bg &lt; 5</td></tr>
+    <tr><td><span class="pill pass">join</span></td><td>candidate adjacency with bg ≥ 11 at the junction windows <i>and</i> end-concentrated contact in the partner-binned profile; orientation = the half of the small scaffold with more contact to the partner's terminal 1 Mb faces it</td></tr>
+    <tr><td><span class="pill review">not joined</span></td><td>enrichment present but junction bg between 5 and 11 — the pieces are near but sequence is probably missing between them; leave unplaced and record the association</td></tr>
+    <tr><td><span class="pill review">seam inside a scaffold</span></td><td>across-seam contact well above inter-chromosomal background and approaching within-arm contact at ≥ 10 Mb = one chromosome (a centromere depresses short-range contact); at background = misjoin</td></tr>
+  </table></div>
+  <div class="callout"><b>Calibrate before deciding.</b> Thresholds come from the distribution of the scaffolder's own joins on <i>this</i> dataset, and one join must be checked by eye in Juicebox as the positive control. In our run the eye-verified join scored bg 45, exactly the median.</div>
+</section>
+
+<section id="qc">
+  <h2>What "good" looks like (thresholds we used)</h2>
+  <div class="table-wrap"><table>
+    <tr><th>metric</th><th>target</th><th>why</th></tr>
+    <tr><td>HiFi coverage</td><td>≥ 25× of the k-mer genome size, all reads rq ≥ 0.99</td><td>hifiasm phases and resolves repeats reliably from ~25×</td></tr>
+    <tr><td>Hi-C junction fraction</td><td>≥ 30 % of reads with the ligation motif</td><td>library quality; below ~10 % expect weak long-range signal</td></tr>
+    <tr><td>Chromosome-scale scaffolds</td><td>size distribution steps at the karyotype number (2n/2)</td><td>the single best sanity check on scaffolding</td></tr>
+    <tr><td>Merqury QV</td><td>≥ 50 (HiFi assemblies: 60–70)</td><td>base accuracy ≥ 99.999 %</td></tr>
+    <tr><td>k-mer completeness</td><td>primary ≥ 95 %; hap1 + hap2 ≥ 99 %</td><td>diploid completeness confirms phasing</td></tr>
+    <tr><td>compleasm / BUSCO</td><td>≥ 97 % single-copy, duplication ≤ 2 %</td><td>gene-space completeness; high D = retained haplotigs</td></tr>
+    <tr><td>Zero-coverage runs on chromosomes</td><td>each one explained (duplication / repeat / artefact)</td><td>reviewers ask about them</td></tr>
+  </table></div>
+</section>
+
+<section id="env">
+  <h2>Software environments</h2>
+  <p>Split by solver compatibility; all pinned. Containers for the annotation tools, which do not install cleanly with conda.</p>
+  <div class="table-wrap"><table>
+    <tr><th>environment</th><th>tools</th></tr>
+    <tr><td><code>assembly</code></td><td>hifiasm 0.25.0 · yahs 1.2.2 · purge_dups 1.2.6 · minimap2 2.28 · samtools 1.21 · bwa 0.7.18 · chromap 0.2.6 · pairtools 1.1.0 · seqkit 2.9.0 · gfatools 0.5 · bedtools 2.31.1 · assembly-stats 1.0.1 · PretextMap 0.1.9 · PretextSnapshot 0.0.4 · pigz</td></tr>
+    <tr><td><code>genomeqc</code></td><td>meryl 1.4.1 · merqury 1.3 · genomescope2 2.0</td></tr>
+    <tr><td><code>busco</code> / <code>compleasm</code></td><td>busco 5.8.0 / compleasm 0.2.10 (separate: BUSCO's dendropy pin conflicts with everything)</td></tr>
+    <tr><td><code>haphic</code></td><td>HapHiC (git, commit 74f1cb2) with its own environment file</td></tr>
+    <tr><td>containers</td><td><code>braker3.sif</code> (BRAKER 3.0.8, GeneMark-ETP, AUGUSTUS, HISAT2) · <code>tetools.sif</code> (Dfam TETools 1.89: RepeatModeler 2.0.5, RepeatMasker 4.1.7)</td></tr>
+    <tr><td>tools / data</td><td>juicer_tools 1.22.01 jar · BUSCO lineages (odb10 + odb12) · OrthoDB v12 Vertebrata proteins · a chromosome-level relative's assembly for synteny</td></tr>
+  </table></div>
+</section>
+
+<section id="pitfalls">
+  <h2>Pitfalls we hit, so you don't</h2>
+  <div class="table-wrap"><table>
+    <tr><th>symptom</th><th>cause</th><th>fix</th></tr>
+    <tr><td>HiFi FASTQ written empty (20 bytes)</td><td><code>samtools fastq -0 /dev/null</code> routes <i>unpaired</i> reads to <code>-0</code></td><td>drop <code>-0</code>; write to stdout</td></tr>
+    <tr><td>chromap aborts (core dump) when writing SAM</td><td><code>--SAM -o /dev/stdout</code> into a pipe</td><td>write the SAM to a file, convert afterwards</td></tr>
+    <tr><td>YaHS makes zero joins; log says "0 read pairs"</td><td>chromap names mates <code>/1</code> and <code>/2</code>; YaHS pairs consecutive records only with identical names</td><td>strip the suffix from QNAME before YaHS</td></tr>
+    <tr><td>Merqury writes 31-byte histograms, no QV</td><td>run started while meryl was still building the k-mer DB; or <code>$MERQURY</code> pointed at a wrong path</td><td>chain jobs with dependencies; set <code>MERQURY=$CONDA_PREFIX/share/merqury</code>; pass symlinked relative paths</td></tr>
+    <tr><td>conda cannot solve one big environment</td><td>QUAST pins blast &lt; 2.16; BUSCO pins dendropy</td><td>split environments; drop QUAST (assembly-stats + a 40-line script give the same numbers)</td></tr>
+    <tr><td>Synteny assigns a small scaffold to the wrong chromosome</td><td>paralogous or repeat-driven alignment</td><td>never join on synteny alone; the Hi-C junction score decides</td></tr>
+    <tr><td>A chromosome shows a Hi-C "hole" with zero reads</td><td>MAPQ filtering in a heterozygous tandem duplication (reads map to two identical copies)</td><td>count reads at all MAPQ; align the region to the other haplotype; keep and report</td></tr>
+    <tr><td>A circular hifiasm contig (<code>…c</code>) spliced into a chromosome by the scaffolder</td><td>satellite array; linear joins to it are unsupported</td><td>break it out (bg ≈ 3); keep it as an unplaced sequence</td></tr>
+    <tr><td>FCS-adaptor "succeeds" but writes no report</td><td>flag typo (<code>-O</code> for <code>-o</code>); the error went to a log and <code>&amp;&amp; echo</code> hid the non-zero exit</td><td>let <code>set -e</code> stop the job; always print the report's line count; check every screening output exists before deposit</td></tr>
+    <tr><td>The shared disk fills up overnight and every running job dies</td><td>tRNAscan-SE found old output files, asked "Overwrite/Append/Quit?" and, with no terminal, looped writing the prompt to its log (453 GB)</td><td>delete old outputs before any tool that prompts; run a disk watcher that alerts below a threshold; keep superseded intermediates (assembler binaries, old BAMs, k-mer DBs) pruned</td></tr>
+    <tr><td>MitoHiFi job "completes" in 13 s with no output</td><td><code>findMitoReference.py</code> queries NCBI; compute nodes have no internet (HTTP 400)</td><td>fetch the closest published mitogenome on the head node (<code>efetch</code> FASTA + GenBank); pass <code>-f/-g</code></td></tr>
+    <tr><td>FCS-GX runs happily on a half-downloaded database</td><td>the guard tested only that <code>all.gxi</code> existed</td><td>verify every file size against the NCBI listing; write <code>.complete</code>; scripts require the flag</td></tr>
+    <tr><td>A 60-CPU node busy for a day doing work nobody needs</td><td>the repeat job carried on to mask the <i>pre-curation</i> scaffolds after its library was done</td><td>make the library its own job; mask only the release; cancel the rest</td></tr>
+    <tr><td>A shrunk pending job stays on "Resources" although cores are free — and blocks everything behind it</td><td><code>scontrol update NumCPUs=16</code> leaves <code>CpusPerTask</code> and <code>MinCPUsNode</code> at the old value; the job reserves a whole node and backfill cannot place smaller jobs before it</td><td>update all three: <code>scontrol update jobid=N NumCPUs=16 CpusPerTask=16 MinCPUsNode=16</code>; check with <code>sbatch --test-only</code></td></tr>
+    <tr><td>Slurm array task dies in 1 s with exit 53</td><td>a node without the data mount</td><td><code>--exclude</code> it in every script</td></tr>
+  </table></div>
+</section>
+
+<section id="adapt">
+  <h2>Adapting to another species</h2>
+  <ul>
+    <li><b>Karyotype:</b> set the HapHiC group count and the expected number of chromosome-scale scaffolds from the literature 2n. If unknown, run HapHiC with a range and let YaHS's size distribution suggest it.</li>
+    <li><b>Restriction enzyme:</b> confirm from the reads (junction motif) — MboI/DpnII = GATC (<code>-e GATC</code>); Arima = GATC,GANTC; HindIII = AAGCTT.</li>
+    <li><b>Heterozygosity:</b> above ~1 % expect better haplotype contiguity and possible retained haplotigs in the primary (watch compleasm duplication; consider purge_dups).</li>
+    <li><b>Ploidy / sex chromosomes:</b> this workflow assumes a diploid without sex chromosomes (TSD reptile). For XY/ZW species, scaffold the haplotypes and check whether a chromosome-scale scaffold has half coverage.</li>
+    <li><b>Reference for synteny:</b> nearest chromosome-level assembly; rename its chromosomes from the FASTA headers as in <code>03d_synteny.sbatch</code>.</li>
+    <li><b>Lineages and proteins:</b> compleasm/BUSCO lineage and the OrthoDB partition for the clade; <code>--species</code> name in BRAKER.</li>
+    <li><b>Plants, fungi, large repeat fractions:</b> raise RepeatModeler time, consider <code>hifiasm -l0/-l1</code> for highly homozygous lines, and FCS-GX becomes mandatory for field-collected samples.</li>
+    <li><b>Memory:</b> hifiasm peak ≈ 50 GB per Gb of genome at 30×; YaHS and chromap &lt; 100 GB; RepeatModeler 60 threads comfortably in 200 GB.</li>
+  </ul>
+</section>
+
+<section id="repro">
+  <h2>Reproducing a run</h2>
+  <div class="table-wrap"><table>
+    <tr><th>#</th><th>script (scripts/genome_v3/)</th><th>args</th><th>depends on</th></tr>
+    <tr><td>0</td><td>00_raw_stats.sbatch</td><td>—</td><td>raw files</td></tr>
+    <tr><td>1</td><td>01_hifi_prep.sbatch</td><td>—</td><td>0</td></tr>
+    <tr><td>2</td><td>02_hifiasm.sbatch</td><td>—</td><td>1</td></tr>
+    <tr><td>3</td><td>03_hic_map.sbatch</td><td>label contigs.fa</td><td>2 (× primary, hap1, hap2)</td></tr>
+    <tr><td>4</td><td>03_scaffold_yahs.sbatch · 03b_scaffold_haphic.sbatch</td><td>label contigs.fa maplabel [n_chr]</td><td>3</td></tr>
+    <tr><td>5</td><td>03c_contactmap.sbatch · 03d_synteny.sbatch</td><td>label scaffolds.fa</td><td>4</td></tr>
+    <tr><td>6–8</td><td>join_qc.py · curation_contacts.py · apply_curation.py · 03e_verify_curation.sbatch</td><td>see headers</td><td>5</td></tr>
+    <tr><td>9–10</td><td>04_qc.sbatch · 04b_merqury.sbatch · 04c_hifi_coverage.sbatch</td><td>label fasta [hap2]</td><td>1 (meryl) + any assembly</td></tr>
+    <tr><td>12–13</td><td>05_repeats.sbatch · 06_braker3.sbatch</td><td>label genome.fa</td><td>8</td></tr>
+    <tr><td>stats</td><td>asm_stats.py</td><td>fasta</td><td>—</td></tr>
+  </table></div>
+  <p class="note">Every script writes a dated banner, tool versions and its outputs to a log under <code>logs/</code>; job IDs are appended to <code>logs/jobs.log</code>. The protocol log is the narrative index over those logs.</p>
+</section>
+
+<footer>
+  <span>Manouria impressa genome Mimp_v3 · genome_assembly_workflow.html · protocol: PROTOCOL_v3.md · github.com/snailQH/Manouria_impressa_genome_v3</span>
+  <span>Written during the <i>Manouria impressa</i> v3 reassembly, October 2026.</span>
+</footer>
+</div>

@@ -1,0 +1,5 @@
+sequence	start	end	length_bp	interpretation
+scaffold_1	6370000	6520000	150000	zero coverage at MAPQ ≥ 1; see text
+scaffold_1	6200000	6340000	140000	zero coverage at MAPQ ≥ 1; see text
+chr1	42870000	42990000	120000	heterozygous tandem duplication (reads present at MAPQ 0)
+chr1	43010000	43130000	120000	heterozygous tandem duplication (reads present at MAPQ 0)

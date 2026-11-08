@@ -1,0 +1,90 @@
+##gff-version 3
+##sequence-region Mimp_v3_mito 1 18133
+Mimp_v3_mito	MitoHiFi	region	1	18133	.	+	.	ID=Mimp_v3_mito;Name=Mimp_v3_mito;Is_circular=true;genome=mitochondrion;mol_type=genomic DNA;organism=Manouria impressa
+Mimp_v3_mito	MitoHiFi	gene	1	70	.	+	.	ID=MIMP3_mt_g01;Name=tRNA-Phe;gene=tRNA-Phe;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	1	70	.	+	.	ID=MIMP3_mt_t01;Parent=MIMP3_mt_g01;Name=tRNA-Phe;product=tRNA-Phe;gene=tRNA-Phe
+Mimp_v3_mito	MitoHiFi	gene	71	1041	.	+	.	ID=MIMP3_mt_g02;Name=rrnS;gene=rrnS;gene_biotype=rRNA
+Mimp_v3_mito	MitoHiFi	rRNA	71	1041	.	+	.	ID=MIMP3_mt_r02;Parent=MIMP3_mt_g02;Name=rrnS;product=rrnS;gene=rrnS
+Mimp_v3_mito	MitoHiFi	gene	1042	1111	.	+	.	ID=MIMP3_mt_g03;Name=tRNA-Val;gene=tRNA-Val;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	1042	1111	.	+	.	ID=MIMP3_mt_t03;Parent=MIMP3_mt_g03;Name=tRNA-Val;product=tRNA-Val;gene=tRNA-Val
+Mimp_v3_mito	MitoHiFi	gene	1112	2710	.	+	.	ID=MIMP3_mt_g04;Name=rrnL;gene=rrnL;gene_biotype=rRNA
+Mimp_v3_mito	MitoHiFi	rRNA	1112	2710	.	+	.	ID=MIMP3_mt_r04;Parent=MIMP3_mt_g04;Name=rrnL;product=rrnL;gene=rrnL
+Mimp_v3_mito	MitoHiFi	gene	2711	2787	.	+	.	ID=MIMP3_mt_g05;Name=tRNA-Leu;gene=tRNA-Leu;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	2711	2787	.	+	.	ID=MIMP3_mt_t05;Parent=MIMP3_mt_g05;Name=tRNA-Leu;product=tRNA-Leu;gene=tRNA-Leu
+Mimp_v3_mito	MitoHiFi	gene	2789	3760	.	+	.	ID=MIMP3_mt_g06;Name=ND1;gene=ND1;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	2789	3760	.	+	0	ID=MIMP3_mt_cds06;Parent=MIMP3_mt_g06;Name=ND1;product=ND1;gene=ND1;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	3760	3830	.	+	.	ID=MIMP3_mt_g07;Name=tRNA-Ile;gene=tRNA-Ile;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	3760	3830	.	+	.	ID=MIMP3_mt_t07;Parent=MIMP3_mt_g07;Name=tRNA-Ile;product=tRNA-Ile;gene=tRNA-Ile
+Mimp_v3_mito	MitoHiFi	gene	3830	3900	.	-	.	ID=MIMP3_mt_g08;Name=tRNA-Gln;gene=tRNA-Gln;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	3830	3900	.	-	.	ID=MIMP3_mt_t08;Parent=MIMP3_mt_g08;Name=tRNA-Gln;product=tRNA-Gln;gene=tRNA-Gln
+Mimp_v3_mito	MitoHiFi	gene	3900	3968	.	+	.	ID=MIMP3_mt_g09;Name=tRNA-Met;gene=tRNA-Met;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	3900	3968	.	+	.	ID=MIMP3_mt_t09;Parent=MIMP3_mt_g09;Name=tRNA-Met;product=tRNA-Met;gene=tRNA-Met
+Mimp_v3_mito	MitoHiFi	gene	3969	5009	.	+	.	ID=MIMP3_mt_g10;Name=ND2;gene=ND2;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	3969	5009	.	+	0	ID=MIMP3_mt_cds10;Parent=MIMP3_mt_g10;Name=ND2;product=ND2;gene=ND2;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	5024	5096	.	+	.	ID=MIMP3_mt_g11;Name=tRNA-Trp;gene=tRNA-Trp;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	5024	5096	.	+	.	ID=MIMP3_mt_t11;Parent=MIMP3_mt_g11;Name=tRNA-Trp;product=tRNA-Trp;gene=tRNA-Trp
+Mimp_v3_mito	MitoHiFi	gene	5098	5166	.	-	.	ID=MIMP3_mt_g12;Name=tRNA-Ala;gene=tRNA-Ala;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	5098	5166	.	-	.	ID=MIMP3_mt_t12;Parent=MIMP3_mt_g12;Name=tRNA-Ala;product=tRNA-Ala;gene=tRNA-Ala
+Mimp_v3_mito	MitoHiFi	gene	5168	5240	.	-	.	ID=MIMP3_mt_g13;Name=tRNA-Asn;gene=tRNA-Asn;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	5168	5240	.	-	.	ID=MIMP3_mt_t13;Parent=MIMP3_mt_g13;Name=tRNA-Asn;product=tRNA-Asn;gene=tRNA-Asn
+Mimp_v3_mito	MitoHiFi	gene	5266	5331	.	-	.	ID=MIMP3_mt_g14;Name=tRNA-Cys;gene=tRNA-Cys;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	5266	5331	.	-	.	ID=MIMP3_mt_t14;Parent=MIMP3_mt_g14;Name=tRNA-Cys;product=tRNA-Cys;gene=tRNA-Cys
+Mimp_v3_mito	MitoHiFi	gene	5332	5402	.	-	.	ID=MIMP3_mt_g15;Name=tRNA-Tyr;gene=tRNA-Tyr;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	5332	5402	.	-	.	ID=MIMP3_mt_t15;Parent=MIMP3_mt_g15;Name=tRNA-Tyr;product=tRNA-Tyr;gene=tRNA-Tyr
+Mimp_v3_mito	MitoHiFi	gene	5422	6951	.	+	.	ID=MIMP3_mt_g16;Name=COX1;gene=COX1;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	5422	6951	.	+	0	ID=MIMP3_mt_cds16;Parent=MIMP3_mt_g16;Name=COX1;product=COX1;gene=COX1;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	6943	7014	.	-	.	ID=MIMP3_mt_g17;Name=tRNA-Ser;gene=tRNA-Ser;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	6943	7014	.	-	.	ID=MIMP3_mt_t17;Parent=MIMP3_mt_g17;Name=tRNA-Ser;product=tRNA-Ser;gene=tRNA-Ser
+Mimp_v3_mito	MitoHiFi	gene	7015	7085	.	+	.	ID=MIMP3_mt_g18;Name=tRNA-Asp;gene=tRNA-Asp;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	7015	7085	.	+	.	ID=MIMP3_mt_t18;Parent=MIMP3_mt_g18;Name=tRNA-Asp;product=tRNA-Asp;gene=tRNA-Asp
+Mimp_v3_mito	MitoHiFi	gene	7086	7772	.	+	.	ID=MIMP3_mt_g19;Name=COX2;gene=COX2;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	7086	7772	.	+	0	ID=MIMP3_mt_cds19;Parent=MIMP3_mt_g19;Name=COX2;product=COX2;gene=COX2;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	7777	7849	.	+	.	ID=MIMP3_mt_g20;Name=tRNA-Lys;gene=tRNA-Lys;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	7777	7849	.	+	.	ID=MIMP3_mt_t20;Parent=MIMP3_mt_g20;Name=tRNA-Lys;product=tRNA-Lys;gene=tRNA-Lys
+Mimp_v3_mito	MitoHiFi	gene	7852	8019	.	+	.	ID=MIMP3_mt_g21;Name=ATP8;gene=ATP8;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	7852	8019	.	+	0	ID=MIMP3_mt_cds21;Parent=MIMP3_mt_g21;Name=ATP8;product=ATP8;gene=ATP8;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	8010	8693	.	+	.	ID=MIMP3_mt_g22;Name=ATP6;gene=ATP6;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	8010	8693	.	+	0	ID=MIMP3_mt_cds22;Parent=MIMP3_mt_g22;Name=ATP6;product=ATP6;gene=ATP6;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	8693	9475	.	+	.	ID=MIMP3_mt_g23;Name=COX3;gene=COX3;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	8693	9475	.	+	0	ID=MIMP3_mt_cds23;Parent=MIMP3_mt_g23;Name=COX3;product=COX3;gene=COX3;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	9477	9544	.	+	.	ID=MIMP3_mt_g24;Name=tRNA-Gly;gene=tRNA-Gly;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	9477	9544	.	+	.	ID=MIMP3_mt_t24;Parent=MIMP3_mt_g24;Name=tRNA-Gly;product=tRNA-Gly;gene=tRNA-Gly
+Mimp_v3_mito	MitoHiFi	gene	9545	9724	.	+	.	ID=MIMP3_mt_g25;Name=ND3;gene=ND3;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	9545	9724	.	+	0	ID=MIMP3_mt_cds25;Parent=MIMP3_mt_g25;Name=ND3;product=ND3;gene=ND3;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	9895	9964	.	+	.	ID=MIMP3_mt_g26;Name=tRNA-Arg;gene=tRNA-Arg;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	9895	9964	.	+	.	ID=MIMP3_mt_t26;Parent=MIMP3_mt_g26;Name=tRNA-Arg;product=tRNA-Arg;gene=tRNA-Arg
+Mimp_v3_mito	MitoHiFi	gene	9965	10261	.	+	.	ID=MIMP3_mt_g27;Name=ND4L;gene=ND4L;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	9965	10261	.	+	0	ID=MIMP3_mt_cds27;Parent=MIMP3_mt_g27;Name=ND4L;product=ND4L;gene=ND4L;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	10615	11637	.	+	.	ID=MIMP3_mt_g28;Name=ND4;gene=ND4;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	10615	11637	.	+	0	ID=MIMP3_mt_cds28;Parent=MIMP3_mt_g28;Name=ND4;product=ND4;gene=ND4;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	11633	11701	.	+	.	ID=MIMP3_mt_g29;Name=tRNA-His;gene=tRNA-His;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	11633	11701	.	+	.	ID=MIMP3_mt_t29;Parent=MIMP3_mt_g29;Name=tRNA-His;product=tRNA-His;gene=tRNA-His
+Mimp_v3_mito	MitoHiFi	gene	11702	11767	.	+	.	ID=MIMP3_mt_g30;Name=tRNA-Ser2;gene=tRNA-Ser2;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	11702	11767	.	+	.	ID=MIMP3_mt_t30;Parent=MIMP3_mt_g30;Name=tRNA-Ser2;product=tRNA-Ser2;gene=tRNA-Ser2
+Mimp_v3_mito	MitoHiFi	gene	11767	11837	.	+	.	ID=MIMP3_mt_g31;Name=tRNA-Leu2;gene=tRNA-Leu2;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	11767	11837	.	+	.	ID=MIMP3_mt_t31;Parent=MIMP3_mt_g31;Name=tRNA-Leu2;product=tRNA-Leu2;gene=tRNA-Leu2
+Mimp_v3_mito	MitoHiFi	gene	11838	13619	.	+	.	ID=MIMP3_mt_g32;Name=ND5;gene=ND5;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	11838	13619	.	+	0	ID=MIMP3_mt_cds32;Parent=MIMP3_mt_g32;Name=ND5;product=ND5;gene=ND5;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	13615	14139	.	-	.	ID=MIMP3_mt_g33;Name=ND6;gene=ND6;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	13615	14139	.	-	0	ID=MIMP3_mt_cds33;Parent=MIMP3_mt_g33;Name=ND6;product=ND6;gene=ND6;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	14140	14207	.	-	.	ID=MIMP3_mt_g34;Name=tRNA-Glu;gene=tRNA-Glu;gene_biotype=tRNA
+Mimp_v3_mito	MitoHiFi	tRNA	14140	14207	.	-	.	ID=MIMP3_mt_t34;Parent=MIMP3_mt_g34;Name=tRNA-Glu;product=tRNA-Glu;gene=tRNA-Glu
+Mimp_v3_mito	MitoHiFi	gene	14212	15348	.	+	.	ID=MIMP3_mt_g35;Name=CYTB;gene=CYTB;gene_biotype=protein_coding
+Mimp_v3_mito	MitoHiFi	CDS	14212	15348	.	+	0	ID=MIMP3_mt_cds35;Parent=MIMP3_mt_g35;Name=CYTB;product=CYTB;gene=CYTB;transl_table=2
+Mimp_v3_mito	MitoHiFi	gene	15357	15426	.	+	.	ID=MIMP3_mt_g36;Name=tRNA-Thr2;gene=tRNA-Thr2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	15357	15426	.	+	.	ID=MIMP3_mt_t36;Parent=MIMP3_mt_g36;Name=tRNA-Thr2;product=tRNA-Thr2;gene=tRNA-Thr2
+Mimp_v3_mito	MitoHiFi	gene	15436	15505	.	-	.	ID=MIMP3_mt_g37;Name=tRNA-Pro2;gene=tRNA-Pro2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	15436	15505	.	-	.	ID=MIMP3_mt_t37;Parent=MIMP3_mt_g37;Name=tRNA-Pro2;product=tRNA-Pro2;gene=tRNA-Pro2
+Mimp_v3_mito	MitoHiFi	gene	15613	15682	.	+	.	ID=MIMP3_mt_g38;Name=tRNA-Thr2_2;gene=tRNA-Thr2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	15613	15682	.	+	.	ID=MIMP3_mt_t38;Parent=MIMP3_mt_g38;Name=tRNA-Thr2_2;product=tRNA-Thr2;gene=tRNA-Thr2
+Mimp_v3_mito	MitoHiFi	gene	15692	15761	.	-	.	ID=MIMP3_mt_g39;Name=tRNA-Pro2_2;gene=tRNA-Pro2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	15692	15761	.	-	.	ID=MIMP3_mt_t39;Parent=MIMP3_mt_g39;Name=tRNA-Pro2_2;product=tRNA-Pro2;gene=tRNA-Pro2
+Mimp_v3_mito	MitoHiFi	gene	15922	15991	.	+	.	ID=MIMP3_mt_g40;Name=tRNA-Thr2_3;gene=tRNA-Thr2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	15922	15991	.	+	.	ID=MIMP3_mt_t40;Parent=MIMP3_mt_g40;Name=tRNA-Thr2_3;product=tRNA-Thr2;gene=tRNA-Thr2
+Mimp_v3_mito	MitoHiFi	gene	16001	16070	.	-	.	ID=MIMP3_mt_g41;Name=tRNA-Pro2_3;gene=tRNA-Pro2;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	16001	16070	.	-	.	ID=MIMP3_mt_t41;Parent=MIMP3_mt_g41;Name=tRNA-Pro2_3;product=tRNA-Pro2;gene=tRNA-Pro2
+Mimp_v3_mito	MitoHiFi	gene	16178	16247	.	+	.	ID=MIMP3_mt_g42;Name=tRNA-Thr;gene=tRNA-Thr;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	16178	16247	.	+	.	ID=MIMP3_mt_t42;Parent=MIMP3_mt_g42;Name=tRNA-Thr;product=tRNA-Thr;gene=tRNA-Thr
+Mimp_v3_mito	MitoHiFi	gene	16257	16326	.	-	.	ID=MIMP3_mt_g43;Name=tRNA-Pro;gene=tRNA-Pro;gene_biotype=tRNA;Note=unit of the tandem tRNA-Thr/tRNA-Pro array adjacent to the control region (four units in the deposited consensus)
+Mimp_v3_mito	MitoHiFi	tRNA	16257	16326	.	-	.	ID=MIMP3_mt_t43;Parent=MIMP3_mt_g43;Name=tRNA-Pro;product=tRNA-Pro;gene=tRNA-Pro
+Mimp_v3_mito	MitoHiFi	D_loop	16327	18133	.	+	.	ID=MIMP3_mt_dloop;Name=control region;Note=inferred from position between tRNA-Pro and tRNA-Phe, not annotated by MitoHiFi

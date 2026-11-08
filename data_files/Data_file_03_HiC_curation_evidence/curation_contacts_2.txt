@@ -1,0 +1,71 @@
+read pairs scanned: 20,760,266
+
+== scaffold_39 (2.52 Mb): pairs with chromosome-scale scaffolds = 7,953  (3155 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_5     1,578     10.7/Mb   enrich  3.06x
+     scaffold_1       949      2.5/Mb   enrich  0.71x
+     scaffold_2       735      2.4/Mb   enrich  0.70x
+     scaffold_3       551      2.5/Mb   enrich  0.73x
+     scaffold_4       431      2.8/Mb   enrich  0.80x
+   where on scaffold_39 (500-kb bins) the scaffold_5 contacts come from: [297, 370, 348, 257, 306, 0]
+   pairs with scaffold_5 along scaffold_5 in 5-Mb bins (first 4 | ... | last 4): [27, 25, 23, 14] ... [114, 169, 230, 164]   max bin 230 at 140 Mb; median bin 30
+
+== scaffold_58 (1.17 Mb): pairs with chromosome-scale scaffolds = 1,011  (867 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_5       128      0.9/Mb   enrich  1.96x
+     scaffold_1       124      0.3/Mb   enrich  0.73x
+     scaffold_2        93      0.3/Mb   enrich  0.69x
+     scaffold_3        69      0.3/Mb   enrich  0.72x
+     scaffold_4        58      0.4/Mb   enrich  0.85x
+   where on scaffold_58 (500-kb bins) the scaffold_5 contacts come from: [11, 78, 39]
+   pairs with scaffold_5 along scaffold_5 in 5-Mb bins (first 4 | ... | last 4): [2, 1, 2, 1] ... [5, 6, 25, 10]   max bin 25 at 140 Mb; median bin 3
+
+== scaffold_17 (27.10 Mb): pairs with chromosome-scale scaffolds = 108,180  (3992 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1    14,886     38.9/Mb   enrich  0.82x
+     scaffold_2    11,854     39.2/Mb   enrich  0.83x
+     scaffold_3     8,805     40.6/Mb   enrich  0.85x
+     scaffold_4     7,064     45.8/Mb   enrich  0.96x
+     scaffold_14    6,931    180.3/Mb   enrich  3.80x
+   where on scaffold_17 (500-kb bins) the scaffold_14 contacts come from: [136, 112, 68, 98, 61, 175, 69, 69, 307, 96, 66, 65, 23, 40, 37, 159, 71, 30, 43, 307, 87, 130, 28, 47, 50, 24, 94, 68, 183, 59, 105, 61, 64, 119, 59, 113, 78, 41, 55, 338, 355, 85, 278, 315, 125, 151, 249, 346, 282, 214, 241, 153, 136, 152, 14]
+   pairs with scaffold_14 along scaffold_14 in 5-Mb bins (first 4 | ... | last 4): [1094, 1271, 1011, 712] ... [891, 736, 635, 581]   max bin 1271 at 5 Mb; median bin 891
+
+== scaffold_27 (8.84 Mb): pairs with chromosome-scale scaffolds = 19,514  (2207 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1     2,592      6.8/Mb   enrich  0.79x
+     scaffold_2     2,083      6.9/Mb   enrich  0.81x
+     scaffold_14    1,591     41.4/Mb   enrich  4.84x
+     scaffold_3     1,461      6.7/Mb   enrich  0.79x
+     scaffold_17    1,171     43.2/Mb   enrich  5.05x
+   where on scaffold_27 (500-kb bins) the scaffold_14 contacts come from: [86, 46, 36, 38, 41, 12, 21, 124, 99, 160, 142, 99, 180, 115, 118, 30, 125, 119]
+   pairs with scaffold_14 along scaffold_14 in 5-Mb bins (first 4 | ... | last 4): [500, 260, 274, 137] ... [96, 157, 134, 33]   max bin 500 at 0 Mb; median bin 157
+
+== scaffold_35 (3.66 Mb): pairs with chromosome-scale scaffolds = 13,649  (3731 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1     5,684     14.8/Mb   enrich  2.48x
+     scaffold_2     1,238      4.1/Mb   enrich  0.68x
+     scaffold_3       938      4.3/Mb   enrich  0.72x
+     scaffold_4       710      4.6/Mb   enrich  0.77x
+     scaffold_5       632      4.3/Mb   enrich  0.72x
+   where on scaffold_35 (500-kb bins) the scaffold_1 contacts come from: [845, 834, 771, 847, 907, 402, 643, 435]
+   pairs with scaffold_1 along scaffold_1 in 5-Mb bins (first 4 | ... | last 4): [462, 442, 320, 151] ... [41, 48, 38, 29]   max bin 462 at 0 Mb; median bin 32
+
+== scaffold_44 (1.85 Mb): pairs with chromosome-scale scaffolds = 16,239  (8757 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_7     2,781     21.5/Mb   enrich  3.02x
+     scaffold_1     1,841      4.8/Mb   enrich  0.67x
+     scaffold_2     1,580      5.2/Mb   enrich  0.73x
+     scaffold_3     1,194      5.5/Mb   enrich  0.77x
+     scaffold_4     1,020      6.6/Mb   enrich  0.93x
+   where on scaffold_44 (500-kb bins) the scaffold_7 contacts come from: [851, 891, 480, 559]
+   pairs with scaffold_7 along scaffold_7 in 5-Mb bins (first 4 | ... | last 4): [318, 171, 142, 160] ... [45, 64, 77, 178]   max bin 318 at 0 Mb; median bin 83
+
+== scaffold_22 (20.94 Mb): pairs with chromosome-scale scaffolds = 195,296  (9325 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1    24,868     64.9/Mb   enrich  0.76x
+     scaffold_2    20,470     67.7/Mb   enrich  0.79x
+     scaffold_3    15,536     71.6/Mb   enrich  0.84x
+     scaffold_4    13,536     87.7/Mb   enrich  1.02x
+     scaffold_7    10,348     79.9/Mb   enrich  0.93x
+   where on scaffold_22 (500-kb bins) the scaffold_3 contacts come from: [502, 371, 343, 338, 419, 370, 358, 228, 435, 463, 451, 440, 478, 430, 455, 445, 339, 301, 389, 376, 402, 400, 430, 364, 273, 361, 449, 389, 291, 121, 216, 292, 296, 424, 448, 357, 361, 428, 419, 358, 307, 219]
+   pairs with scaffold_3 along scaffold_3 in 5-Mb bins (first 4 | ... | last 4): [809, 484, 441, 424] ... [356, 378, 557, 257]   max bin 809 at 0 Mb; median bin 329

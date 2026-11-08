@@ -1,0 +1,32 @@
+# BUSCO version is: 5.8.0 
+# The lineage dataset is: vertebrata_odb10 (Creation date: 2024-01-08, number of genomes: 67, number of BUSCOs: 3354)
+# Summarized benchmarking in BUSCO notation for file /data2/projects/Chitin_Metabolism_Analysis/01.Genome_Assembly/v2.4-20251210/01_final_results/01_assemblies/Manouria_impressa_v2.genome.fasta
+# BUSCO was run in mode: euk_genome_min
+# Gene predictor used: miniprot
+
+	***** Results: *****
+
+	C:99.3%[S:97.8%,D:1.6%],F:0.3%,M:0.4%,n:3354,E:4.7%	   
+	3332	Complete BUSCOs (C)	(of which 157 contain internal stop codons)		   
+	3279	Complete and single-copy BUSCOs (S)	   
+	53	Complete and duplicated BUSCOs (D)	   
+	10	Fragmented BUSCOs (F)			   
+	12	Missing BUSCOs (M)			   
+	3354	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	402	Number of scaffolds
+	514	Number of contigs
+	2429843097	Total length
+	0.000%	Percent gaps
+	124 MB	Scaffold N50
+	86 MB	Contigs N50
+
+
+Dependencies and versions:
+	hmmsearch: 3.4
+	bbtools: None
+	miniprot_index: 0.18-r281
+	miniprot_align: 0.18-r281
+	python: sys.version_info(major=3, minor=13, micro=16, releaselevel='final', serial=0)
+	busco: 5.8.0

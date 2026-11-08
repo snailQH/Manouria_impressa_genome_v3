@@ -1,0 +1,16 @@
+# Assembly statistics of the preliminary Genome Warehouse version .1 next to Mimp_v3 (same reads; contigs identical)
+Statistic	Mimp_v3 (reference)	preliminary version .1
+Sequences	361	402
+Total length (bp)	2,417,402,780	2,429,843,097
+Scaffold N50 (bp)	138,646,552	124,747,853
+Scaffold N90 (bp)	21,674,238	13,748,316
+Longest sequence (bp)	382,984,538	303,622,320
+Contigs	509	502
+Contig N50 (bp)	86,871,185	86,871,185
+Gaps	148	100
+Chromosome-scale sequences	26 (94.5 % of length)	32 (26 chromosomes + 6 fragments)
+Merqury QV / k-mer completeness (%)	67.93 / 95.09	67.43 / 95.43
+compleasm vertebrata_odb12 (n = 3,390) (%)	S 98.82 D 0.94 F 0.12 M 0.12	S 98.82 D 0.94 F 0.12 M 0.12
+BUSCO 5.8.0 vertebrata_odb10 (n = 3,354) (%)	C 99.3 [S 97.8, D 1.5] F 0.3 M 0.4	C 99.3 [S 97.8, D 1.6] F 0.3 M 0.4
+EBP quality notation	7.8.Q67	7.8.Q67
+Accession	GWHHIVU00000000.2 [[PENDING]]	GWHHIVU00000000.1

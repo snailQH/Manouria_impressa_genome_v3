@@ -1,0 +1,9 @@
+# compleasm version is: 0.2.10
+# The lineage dataset is: sauropsida_odb12 (Creation date: 2026-05-22, number of genomes: 79, number of BUSCOs: 6118)
+## lineage: sauropsida_odb12
+S:98.61%, 6033
+D:0.82%, 50
+F:0.11%, 7
+I:0.00%, 0
+M:0.46%, 28
+N:6118

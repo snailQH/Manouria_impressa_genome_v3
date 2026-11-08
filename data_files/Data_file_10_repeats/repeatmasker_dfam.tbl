@@ -1,0 +1,59 @@
+==================================================
+file name: genome.fa.masked         
+sequences:           394
+total length: 2428929594 bp  (2428913094 bp excl N/X-runs)
+GC level:         44.43 %
+bases masked:   20524009 bp ( 0.84 %)
+==================================================
+               number of      length   percentage
+               elements*    occupied  of sequence
+--------------------------------------------------
+Retroelements          145        14437 bp    0.00 %
+   SINEs:              145        14437 bp    0.00 %
+   Penelope:             0            0 bp    0.00 %
+   LINEs:                0            0 bp    0.00 %
+    CRE/SLACS            0            0 bp    0.00 %
+     L2/CR1/Rex          0            0 bp    0.00 %
+     R1/LOA/Jockey       0            0 bp    0.00 %
+     R2/R4/NeSL          0            0 bp    0.00 %
+     RTE/Bov-B           0            0 bp    0.00 %
+     L1/CIN4             0            0 bp    0.00 %
+   LTR elements:         0            0 bp    0.00 %
+     BEL/Pao             0            0 bp    0.00 %
+     Ty1/Copia           0            0 bp    0.00 %
+     Gypsy/DIRS1         0            0 bp    0.00 %
+       Retroviral        0            0 bp    0.00 %
+
+DNA transposons          0            0 bp    0.00 %
+   hobo-Activator        0            0 bp    0.00 %
+   Tc1-IS630-Pogo        0            0 bp    0.00 %
+   En-Spm                0            0 bp    0.00 %
+   MULE-MuDR             0            0 bp    0.00 %
+   PiggyBac              0            0 bp    0.00 %
+   Tourist/Harbinger     0            0 bp    0.00 %
+   Other (Mirage,        0            0 bp    0.00 %
+    P-element, Transib)
+
+Rolling-circles          0            0 bp    0.00 %
+
+Unclassified:            8          345 bp    0.00 %
+
+Total interspersed repeats:       14782 bp    0.00 %
+
+
+Small RNA:            7406       527384 bp    0.02 %
+
+Satellites:              0            0 bp    0.00 %
+Simple repeats:     391328     16186421 bp    0.67 %
+Low complexity:      70437      3795422 bp    0.16 %
+==================================================
+
+* most repeats fragmented by insertions or deletions
+  have been counted as one element
+                                                      
+
+The query species was assumed to be tetrapoda     
+RepeatMasker version 4.1.7-p1 , default mode
+                                     
+run with rmblastn version 2.14.1+
+FamDB: CONS-Dfam_3.8

@@ -1,0 +1,17 @@
+# Table 3. Annotation statistics (final evidence-supported gene set)
+Feature	Value
+Protein-coding genes	24,875
+Transcripts	29,927
+Transcripts per gene	1.20
+Mean gene length (bp)	33,694
+Mean CDS length (bp)	1,668
+Mean exons per transcript	9.82
+Mean exon / intron length (bp)	170 / 4,418
+Median protein length (aa)	380
+Single-exon transcripts	4,355
+BUSCO vertebrata_odb10, protein mode (n = 3,354) (%)	C 97.6 [S 95.8, D 1.9] F 1.4 M 1.0
+Genes with eggNOG-mapper annotation (%)	22,136 (89.0); GO 15,241, KEGG 15,259, Pfam 20,957
+Genes with RNA-seq support (heart + lung)	18,875 (75.9 %) with ≥ 10 reads; 22,490 (90.4 %) with ≥ 1 read
+tRNA genes (tRNAscan-SE high-confidence / all predictions)	3,309 / 24,407
+rRNA genes or fragments (Barrnap)	18S 92; 5.8S 79; 28S 99; 5S 181
+Repeats (soft-masked, union of two passes) (%)	48.60

@@ -1,0 +1,99 @@
+read pairs scanned: 20,760,266
+
+== scaffold_22 (20.94 Mb): pairs with chromosome-scale scaffolds = 195,296  (9325 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1    24,868     64.9/Mb   enrich  0.76x
+     scaffold_2    20,470     67.7/Mb   enrich  0.79x
+     scaffold_3    15,536     71.6/Mb   enrich  0.84x
+     scaffold_4    13,536     87.7/Mb   enrich  1.02x
+     scaffold_7    10,348     79.9/Mb   enrich  0.93x
+   pairs with scaffold_3 along scaffold_3 in 5-Mb bins (first 4 | ... | last 4): [809, 484, 441, 424] ... [356, 378, 557, 257]   max bin 809 at 0 Mb; median bin 329
+
+== scaffold_44 (1.85 Mb): pairs with chromosome-scale scaffolds = 16,239  (8757 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_7     2,781     21.5/Mb   enrich  3.02x
+     scaffold_1     1,841      4.8/Mb   enrich  0.67x
+     scaffold_2     1,580      5.2/Mb   enrich  0.73x
+     scaffold_3     1,194      5.5/Mb   enrich  0.77x
+     scaffold_4     1,020      6.6/Mb   enrich  0.93x
+   pairs with scaffold_7 along scaffold_7 in 5-Mb bins (first 4 | ... | last 4): [318, 171, 142, 160] ... [45, 64, 77, 178]   max bin 318 at 0 Mb; median bin 83
+
+== scaffold_52 (1.51 Mb): pairs with chromosome-scale scaffolds = 16,433  (10899 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1     1,857      4.8/Mb   enrich  0.67x
+     scaffold_2     1,584      5.2/Mb   enrich  0.73x
+     scaffold_25    1,421     94.7/Mb   enrich 13.14x
+     scaffold_3     1,178      5.4/Mb   enrich  0.75x
+     scaffold_4       966      6.3/Mb   enrich  0.87x
+   pairs with scaffold_25 along scaffold_25 in 5-Mb bins (first 4 | ... | last 4): [978, 300, 143, 0] ... [978, 300, 143, 0]   max bin 978 at 0 Mb; median bin 300
+
+== scaffold_60 (1.06 Mb): pairs with chromosome-scale scaffolds = 9,369  (8873 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_11    1,528     18.9/Mb   enrich  4.59x
+     scaffold_1     1,087      2.8/Mb   enrich  0.69x
+     scaffold_2       911      3.0/Mb   enrich  0.73x
+     scaffold_3       663      3.1/Mb   enrich  0.74x
+     scaffold_4       555      3.6/Mb   enrich  0.88x
+   pairs with scaffold_11 along scaffold_11 in 5-Mb bins (first 4 | ... | last 4): [385, 157, 141, 99] ... [56, 59, 81, 29]   max bin 385 at 0 Mb; median bin 59
+
+== scaffold_35 (3.66 Mb): pairs with chromosome-scale scaffolds = 13,649  (3731 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1     5,684     14.8/Mb   enrich  2.48x
+     scaffold_2     1,238      4.1/Mb   enrich  0.68x
+     scaffold_3       938      4.3/Mb   enrich  0.72x
+     scaffold_4       710      4.6/Mb   enrich  0.77x
+     scaffold_5       632      4.3/Mb   enrich  0.72x
+   pairs with scaffold_1 along scaffold_1 in 5-Mb bins (first 4 | ... | last 4): [462, 442, 320, 151] ... [41, 48, 38, 29]   max bin 462 at 0 Mb; median bin 32
+
+== scaffold_39 (2.52 Mb): pairs with chromosome-scale scaffolds = 7,953  (3155 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_5     1,578     10.7/Mb   enrich  3.06x
+     scaffold_1       949      2.5/Mb   enrich  0.71x
+     scaffold_2       735      2.4/Mb   enrich  0.70x
+     scaffold_3       551      2.5/Mb   enrich  0.73x
+     scaffold_4       431      2.8/Mb   enrich  0.80x
+   pairs with scaffold_18 along scaffold_18 in 5-Mb bins (first 4 | ... | last 4): [30, 30, 23, 17] ... [23, 17, 28, 3]   max bin 30 at 0 Mb; median bin 28
+
+== scaffold_58 (1.17 Mb): pairs with chromosome-scale scaffolds = 1,011  (867 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_5       128      0.9/Mb   enrich  1.96x
+     scaffold_1       124      0.3/Mb   enrich  0.73x
+     scaffold_2        93      0.3/Mb   enrich  0.69x
+     scaffold_3        69      0.3/Mb   enrich  0.72x
+     scaffold_4        58      0.4/Mb   enrich  0.85x
+   pairs with scaffold_9 along scaffold_9 in 5-Mb bins (first 4 | ... | last 4): [0, 2, 3, 0] ... [1, 2, 2, 0]   max bin 5 at 75 Mb; median bin 2
+
+== scaffold_17 (27.10 Mb): pairs with chromosome-scale scaffolds = 108,180  (3992 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1    14,886     38.9/Mb   enrich  0.82x
+     scaffold_2    11,854     39.2/Mb   enrich  0.83x
+     scaffold_3     8,805     40.6/Mb   enrich  0.85x
+     scaffold_4     7,064     45.8/Mb   enrich  0.96x
+     scaffold_14    6,931    180.3/Mb   enrich  3.80x
+
+== scaffold_24 (16.43 Mb): pairs with chromosome-scale scaffolds = 138,376  (8420 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1    17,905     46.8/Mb   enrich  0.77x
+     scaffold_2    14,648     48.5/Mb   enrich  0.80x
+     scaffold_3    10,752     49.5/Mb   enrich  0.82x
+     scaffold_4     9,722     63.0/Mb   enrich  1.04x
+     scaffold_7     7,509     58.0/Mb   enrich  0.96x
+
+== scaffold_27 (8.84 Mb): pairs with chromosome-scale scaffolds = 19,514  (2207 per Mb of X)
+   top partners (pairs, pairs per Mb of partner, enrichment vs partner's share of genome):
+     scaffold_1     2,592      6.8/Mb   enrich  0.79x
+     scaffold_2     2,083      6.9/Mb   enrich  0.81x
+     scaffold_14    1,591     41.4/Mb   enrich  4.84x
+     scaffold_3     1,461      6.7/Mb   enrich  0.79x
+     scaffold_17    1,171     43.2/Mb   enrich  5.05x
+
+== scaffold_12 seam test at 33 Mb (fraction 0.58): mean pairs per 1-Mb bin pair at distance d
+   d(Mb)   within-A   within-B   across-seam   across/within
+       2      158.7      122.8          45.5     0.32
+       4       91.8       84.4          44.5     0.51
+       6       68.3       73.4          45.2     0.64
+       8       56.9       60.2          37.8     0.64
+      10       50.9       51.8          47.4     0.92
+      15       48.8       33.2          32.1     0.78
+      20       34.2       26.8          26.4     0.87
+   total pairs across the seam: 17,916; scaffold_12's pairs with OTHER chromosomes: 520,078 (over 2280 Mb) -> background 228.1 per Mb of partner; across-seam per Mb of part B: 741.6
