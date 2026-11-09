@@ -50,14 +50,15 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 12_repeat_landscape.py | 2,928 | ac29ceb1c27275d5c0663375a54747ef |
 | name_chromosomes.py | 2,476 | 2d601defa5c234aeae25181f880e50c1 |
 | 06i_gff3_gwh_fix.py | 6,415 | 49c1a4dae4ed536a713987105b1b47ae |
-| make_manuscript_docx.py | 9,946 | cf191b5c6fb1e838148582afa8f9065f |
+| make_manuscript_docx.py | 10,296 | ea55c5984458eeac3b8ab7779e070477 |
 | 09_telomere.py | 1,108 | 46eba0b32bf9d7bc79c5ce3524bec492 |
+| refnumber.py | 2,010 | fc47bd6ea2ecd3be23ccf428429ab64e |
 | curation_contacts.py | 5,034 | db00bcf4a5eac1c47afed733d6ca4bbb |
 | 16_synteny_rearrangements.py | 6,792 | 1e37a1f0f37b7a57468bd7db2b89d5f5 |
 | apply_curation.py | 4,948 | 339e906f9230d2dc399f59f7d1b6ac00 |
 | asm_stats.py | 1,276 | dcbea278fa3dbca594c9dd18763683d6 |
 | make_manuscript_figs_tables.py | 27,347 | f5e72183de0e30c76940899799bbf08e |
-| make_datafile1_pdf.py | 2,976 | 82cc305b215ef5ca1108c6f0133371d3 |
+| make_datafile1_pdf.py | 2,942 | 7314070bed221a47d7aa6c6bd4b58ac8 |
 | 17_mito_gb2gff3.py | 4,579 | 2f1aff51460a00d5ef21bef4a4ee39fd |
 | disk_watch.sh | 551 | 999592ee5f5207ea337c108d987d7204 |
 | fcs_gx_chain.sh | 1,400 | 03c2938a9f03d8d4c42e5c11eb64d128 |

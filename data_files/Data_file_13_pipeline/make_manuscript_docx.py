@@ -6,7 +6,8 @@
   docs/genome_paper_new_submission/figures/*.png                       (figures)
 Output: docs/genome_paper_new_submission/manuscript/Manouria_impressa_genome_v3_DataNote.docx
 Placeholders [[...]] are kept verbatim and highlighted yellow so nothing pending can be mistaken for a result."""
-import os, re
+import os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from refnumber import Renumberer
 from docx import Document
 from docx.enum.style import WD_STYLE_TYPE
 from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_COLOR_INDEX, WD_BREAK
@@ -54,14 +55,24 @@ def references():
         if m: refs[int(m.group(1))] = m.group(2).strip()
     return refs
 
-def main(src='MANUSCRIPT_DATA_NOTE.md', out=OUT, figs=None):
+def main(src='MANUSCRIPT_DATA_NOTE.md', out=OUT, figs=None, author_placeholder=True, table_subs=None, extra_tables=True):
     doc = Document(); styles(doc)
     for s in doc.sections: s.left_margin = s.right_margin = s.top_margin = s.bottom_margin = Inches(1)
     md = open(os.path.join(MAN, src), encoding='utf-8').read().split('\n')
     # title = first H1; skip the draft-conventions block (lines before the first '---')
     title = md[0].lstrip('# ').strip(); doc.add_paragraph(title, style='ManuscriptTitle')
-    p = doc.add_paragraph(); rich(p, '[[AUTHORS, AFFILIATIONS, ORCIDs, CORRESPONDING AUTHOR — added before submission]]')
+    if author_placeholder: p = doc.add_paragraph(); rich(p, '[[AUTHORS, AFFILIATIONS, ORCIDs, CORRESPONDING AUTHOR — added before submission]]')
     body = md[md.index('---') + 1:]
+    # citations renumbered by first appearance (body first, then the table files); the .md sources keep the verified-list numbers
+    refs = references(); rn = Renumberer(refs); body = rn.convert('\n'.join(body)).split('\n')
+    table_names = ('Table1_software.md', 'Table2_sequencing_assembly.md', 'Table3_annotation.md') if src.endswith('NOTE.md') else ('Table2_sequencing_assembly.md', 'Table3_annotation.md')
+    table_text = {}
+    for name in table_names:
+        f = os.path.join(MAN, 'tables', name)
+        if os.path.exists(f):
+            t = open(f, encoding='utf-8').read()
+            for a, b in (table_subs or {}).items(): t = t.replace(a, b)
+            table_text[name] = rn.convert(t)
     i = 0; in_refs = False; in_legends = False; used = set()
     while i < len(body):
         l = body[i]
@@ -87,21 +98,15 @@ def main(src='MANUSCRIPT_DATA_NOTE.md', out=OUT, figs=None):
             p = doc.add_paragraph(); rich(p, text)
         i += 1
     # ---- References (only those cited, renumbered in order of first appearance) ----
-    refs = references(); doc.add_heading('References', level=1)
-    full = '\n'.join(body); order = []
-    for m in re.finditer(r'\[(\d[\d,]*)\]', full):
-        for x in m.group(1).split(','):
-            x = int(x)
-            if x in refs and x not in order: order.append(x)
-    p = doc.add_paragraph(); rich(p, '[[Citations keep the verified-list numbers in this draft; the final pass renumbers them in order of first appearance. Cited: %d of %d verified entries.]]' % (len(order), len(refs)))
-    for x in sorted(order):
-        p = doc.add_paragraph(); p.paragraph_format.line_spacing = 1.15; p.paragraph_format.space_after = Pt(4); rich(p, f'{x}. {refs[x]}', 11)
+    doc.add_heading('References', level=1); order = rn.reference_list()
+    for n, text in order:
+        p = doc.add_paragraph(); p.paragraph_format.line_spacing = 1.15; p.paragraph_format.space_after = Pt(4); rich(p, f'{n}. {text}', 11)
     # ---- Tables ----
-    doc.add_page_break(); doc.add_heading('Tables' if src.endswith('NOTE.md') else 'Additional tables (for reference; Table 1 is in the text)', level=1)
-    for name in (('Table1_software.md', 'Table2_sequencing_assembly.md', 'Table3_annotation.md') if src.endswith('NOTE.md') else ('Table2_sequencing_assembly.md', 'Table3_annotation.md')):
-        f = os.path.join(MAN, 'tables', name)
-        if not os.path.exists(f): continue
-        lines = open(f, encoding='utf-8').read().split('\n'); j = 0
+    if not extra_tables: table_names = ()
+    if table_names: doc.add_page_break(); doc.add_heading('Tables' if src.endswith('NOTE.md') else 'Additional tables (for reference; Table 1 is in the text)', level=1)
+    for name in table_names:
+        if name not in table_text: continue
+        lines = table_text[name].split('\n'); j = 0
         while j < len(lines):
             if lines[j].startswith('**'): p = doc.add_paragraph(); rich(p, lines[j]); j += 1; continue
             if lines[j].startswith('|'):
@@ -125,5 +130,5 @@ BMC_FIGS = [('Fig. 1', os.path.join(BMCFIG, 'Fig1_assembly_overview.png'), 'The 
 if __name__ == '__main__':
     import sys
     if len(sys.argv) > 1 and sys.argv[1] == 'bmc':
-        main('MANUSCRIPT_DATA_NOTE_BMC.md', os.path.join(MAN, 'Manouria_impressa_genome_v3_BMC_Genomic_Data_DataNote.docx'), BMC_FIGS)
+        main('MANUSCRIPT_DATA_NOTE_BMC.md', os.path.join(MAN, 'Manouria_impressa_genome_v3_BMC_Genomic_Data_DataNote.docx'), BMC_FIGS, extra_tables=False)   # Data Note: Table 1 only (BMC)
     else: main()

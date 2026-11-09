@@ -13,5 +13,5 @@
 | 10 | `Data_file_10_repeats` | 6 | 0.1 MB | complete |
 | 11 | `Data_file_11_gene_annotation` | 12 | 6.2 MB | complete |
 | 12 | `Data_file_12_ncRNA` | 2 | 0.0 MB | complete |
-| 13 | `Data_file_13_pipeline` | 70 | 0.3 MB | complete |
+| 13 | `Data_file_13_pipeline` | 71 | 0.3 MB | complete |
 | 01 | `Data_file_01_extended_description` | 1 | 1.1 MB | complete |
