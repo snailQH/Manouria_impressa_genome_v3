@@ -53,7 +53,7 @@ e0d1b265eba07fbf573f779f454e442a  make_manuscript_figs_tables.py
 2f1aff51460a00d5ef21bef4a4ee39fd  17_mito_gb2gff3.py
 999592ee5f5207ea337c108d987d7204  disk_watch.sh
 03c2938a9f03d8d4c42e5c11eb64d128  fcs_gx_chain.sh
-1e9e315e047393c35941fc76cf7c2db9  collect_manuscript_inputs.sh
+94eb8c02233d3bcd342007e82d9204f7  collect_manuscript_inputs.sh
 11ca2ffb738ff14193932935545d0620  software_versions.sh
 fb605ba2ff2ad634c7889a9014995993  release_qc_chain.sh
 aa089511045cebe3cd53c75adf329002  chain_annotation.sh
@@ -65,6 +65,6 @@ ff8ee507ec652dee4b072a97691ddb54  eggnog.yml
 c4f3cc8013d33f59a05d773414d814ab  haphic.yml
 590b56190882cd0c008f5eee3ff5e196  ncrna.yml
 2c43df286b81004c140752c86ad34217  genomeqc.yml
-ff760d4a33dc578a93479b32d971bf44  PROTOCOL_v3.md
+de0f474fb817429b9bda5e8c9a704e79  PROTOCOL_v3.md
 9ca52234240e8ed7a161e1d2bf8e1f30  software_versions.tsv
 b50aa80ad0db6e342f9d3c1b32b443d6  genome_assembly_workflow.html

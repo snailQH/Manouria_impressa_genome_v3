@@ -9,3 +9,4 @@ a31e629c0d3a163ba89819f859737dc4  gene_density.tsv
 f933a84833cb373a87cf322bed30b720  gh18_best_hits.tsv
 f4be6d660f4b975e8c1e44a9e1f8171f  gh18_region_genes.tsv
 784ec7f72076fbddd21e0945aba4f272  gwh_partial_models.tsv
+8faec6db810dea18508505a4791567e6  Mimp_v3.genes.gff3.gz
