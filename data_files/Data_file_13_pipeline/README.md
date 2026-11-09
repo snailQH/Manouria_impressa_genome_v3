@@ -31,6 +31,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 05c_fix_softmask.sbatch | 2,770 | 9d1d34edced47df4a7077b928b440c81 |
 | 16_synteny_rearrangements.sbatch | 1,041 | f053f7ce5719ae524ec9fc0e9b0a9cc1 |
 | 03d_synteny.sbatch | 4,366 | 0f03b9f4ab0dbf693600f2e0b927f55b |
+| 06i_gff3_gwh_fix.sbatch | 462 | 6af8a7994b57749e6318084ea22f8bb7 |
 | 03b_scaffold_haphic.sbatch | 1,706 | 26b7203388c08c838d36a2ac30a3f6c4 |
 | 07b_fcs_only.sbatch | 1,430 | dd3807170f2752cb0e3c65b690963125 |
 | 00_raw_stats.sbatch | 1,666 | 0be290dc58e14cf578561f38599a9f01 |
@@ -48,6 +49,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | join_qc.py | 7,063 | 97390a6383b906eb9ca569840e3f2c6a |
 | 12_repeat_landscape.py | 2,928 | ac29ceb1c27275d5c0663375a54747ef |
 | name_chromosomes.py | 2,476 | 2d601defa5c234aeae25181f880e50c1 |
+| 06i_gff3_gwh_fix.py | 6,415 | 49c1a4dae4ed536a713987105b1b47ae |
 | make_manuscript_docx.py | 9,946 | cf191b5c6fb1e838148582afa8f9065f |
 | 09_telomere.py | 1,108 | 46eba0b32bf9d7bc79c5ce3524bec492 |
 | curation_contacts.py | 5,034 | db00bcf4a5eac1c47afed733d6ca4bbb |
@@ -59,7 +61,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 17_mito_gb2gff3.py | 4,579 | 2f1aff51460a00d5ef21bef4a4ee39fd |
 | disk_watch.sh | 551 | 999592ee5f5207ea337c108d987d7204 |
 | fcs_gx_chain.sh | 1,400 | 03c2938a9f03d8d4c42e5c11eb64d128 |
-| collect_manuscript_inputs.sh | 5,203 | 0023cbd5b358d34b7fb265953c46db38 |
+| collect_manuscript_inputs.sh | 5,282 | 1e9e315e047393c35941fc76cf7c2db9 |
 | software_versions.sh | 2,236 | 11ca2ffb738ff14193932935545d0620 |
 | release_qc_chain.sh | 1,054 | fb605ba2ff2ad634c7889a9014995993 |
 | chain_annotation.sh | 828 | aa089511045cebe3cd53c75adf329002 |
@@ -71,6 +73,6 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | haphic.yml | 1,337 | c4f3cc8013d33f59a05d773414d814ab |
 | ncrna.yml | 5,875 | 590b56190882cd0c008f5eee3ff5e196 |
 | genomeqc.yml | 3,215 | 2c43df286b81004c140752c86ad34217 |
-| PROTOCOL_v3.md | 39,593 | 7754bb045109fa52dd9097e7d97c315e |
+| PROTOCOL_v3.md | 41,407 | ff760d4a33dc578a93479b32d971bf44 |
 | software_versions.tsv | 809 | 9ca52234240e8ed7a161e1d2bf8e1f30 |
 | genome_assembly_workflow.html | 39,819 | b50aa80ad0db6e342f9d3c1b32b443d6 |

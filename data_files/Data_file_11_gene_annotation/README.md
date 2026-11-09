@@ -2,7 +2,7 @@
 
 Gene-set statistics, BUSCO-protein summaries of the candidate and final gene sets, eggNOG annotation rate, RNA-seq support, gene density, gene ID map.
 
-Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC4973488 = liver DNA libraries; RNA-seq BioSamples SAMC4973532 heart, SAMC4976828 lung). Produced by the pipeline in Data file 13 (scripts/genome_v3). Final set = AUGUSTUS-with-hints genes carrying >= 1 line of evidence (RNA-seq reads, eggNOG ortholog, or BUSCO match). gh18_* = chitinase (GH18) locus check.
+Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC4973488 = liver DNA libraries; RNA-seq BioSamples SAMC4973532 heart, SAMC4976828 lung). Produced by the pipeline in Data file 13 (scripts/genome_v3). Final set = AUGUSTUS-with-hints genes carrying >= 1 line of evidence (RNA-seq reads, eggNOG ortholog, or BUSCO match). gh18_* = chitinase (GH18) locus check. gwh_partial_models: the 139 transcripts flagged partial in the released GFF3 (truncated by a scaffold end or gap), with the bases trimmed from each end (06i_gff3_gwh_fix.py; proteins unchanged).
 
 | file | bytes | md5 |
 |---|---|---|
@@ -16,3 +16,4 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | gene_density.tsv | 7,752 | a31e629c0d3a163ba89819f859737dc4 |
 | gh18_best_hits.tsv | 1,401 | f933a84833cb373a87cf322bed30b720 |
 | gh18_region_genes.tsv | 793 | f4be6d660f4b975e8c1e44a9e1f8171f |
+| gwh_partial_models.tsv | 8,648 | 784ec7f72076fbddd21e0945aba4f272 |

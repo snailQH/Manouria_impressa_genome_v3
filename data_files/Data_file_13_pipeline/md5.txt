@@ -23,6 +23,7 @@ da94ea7c6cbb65a44795c596cd797d33  07c_mitohifi.sbatch
 9d1d34edced47df4a7077b928b440c81  05c_fix_softmask.sbatch
 f053f7ce5719ae524ec9fc0e9b0a9cc1  16_synteny_rearrangements.sbatch
 0f03b9f4ab0dbf693600f2e0b927f55b  03d_synteny.sbatch
+6af8a7994b57749e6318084ea22f8bb7  06i_gff3_gwh_fix.sbatch
 26b7203388c08c838d36a2ac30a3f6c4  03b_scaffold_haphic.sbatch
 dd3807170f2752cb0e3c65b690963125  07b_fcs_only.sbatch
 0be290dc58e14cf578561f38599a9f01  00_raw_stats.sbatch
@@ -40,6 +41,7 @@ b5416e722248b3ff5b1ed3bf2e8046fb  03f_hic_stats.sbatch
 97390a6383b906eb9ca569840e3f2c6a  join_qc.py
 ac29ceb1c27275d5c0663375a54747ef  12_repeat_landscape.py
 2d601defa5c234aeae25181f880e50c1  name_chromosomes.py
+49c1a4dae4ed536a713987105b1b47ae  06i_gff3_gwh_fix.py
 cf191b5c6fb1e838148582afa8f9065f  make_manuscript_docx.py
 46eba0b32bf9d7bc79c5ce3524bec492  09_telomere.py
 db00bcf4a5eac1c47afed733d6ca4bbb  curation_contacts.py
@@ -51,7 +53,7 @@ e0d1b265eba07fbf573f779f454e442a  make_manuscript_figs_tables.py
 2f1aff51460a00d5ef21bef4a4ee39fd  17_mito_gb2gff3.py
 999592ee5f5207ea337c108d987d7204  disk_watch.sh
 03c2938a9f03d8d4c42e5c11eb64d128  fcs_gx_chain.sh
-0023cbd5b358d34b7fb265953c46db38  collect_manuscript_inputs.sh
+1e9e315e047393c35941fc76cf7c2db9  collect_manuscript_inputs.sh
 11ca2ffb738ff14193932935545d0620  software_versions.sh
 fb605ba2ff2ad634c7889a9014995993  release_qc_chain.sh
 aa089511045cebe3cd53c75adf329002  chain_annotation.sh
@@ -63,6 +65,6 @@ ff8ee507ec652dee4b072a97691ddb54  eggnog.yml
 c4f3cc8013d33f59a05d773414d814ab  haphic.yml
 590b56190882cd0c008f5eee3ff5e196  ncrna.yml
 2c43df286b81004c140752c86ad34217  genomeqc.yml
-7754bb045109fa52dd9097e7d97c315e  PROTOCOL_v3.md
+ff760d4a33dc578a93479b32d971bf44  PROTOCOL_v3.md
 9ca52234240e8ed7a161e1d2bf8e1f30  software_versions.tsv
 b50aa80ad0db6e342f9d3c1b32b443d6  genome_assembly_workflow.html
