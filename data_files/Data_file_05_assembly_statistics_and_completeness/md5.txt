@@ -1,4 +1,4 @@
-aa51f8579cc4af97c94d09a754c35c96  Table2_sequencing_assembly.tsv
+b447e61ad4d07a6b582ffe69137c7f38  Table2_sequencing_assembly.tsv
 056bef0d31fac9ff4d4764b2da26f56e  TableS1_chromosomes.tsv
 ca3c88938bb0b190b8050ba1f452ed62  TableS5_telomeres.tsv
 4c121027351a5196b7e49b27a139afad  TableS7_coverage_zero_runs.tsv

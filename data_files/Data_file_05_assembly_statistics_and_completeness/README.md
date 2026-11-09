@@ -6,7 +6,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 
 | file | bytes | md5 |
 |---|---|---|
-| Table2_sequencing_assembly.tsv | 1,665 | aa51f8579cc4af97c94d09a754c35c96 |
+| Table2_sequencing_assembly.tsv | 1,665 | b447e61ad4d07a6b582ffe69137c7f38 |
 | TableS1_chromosomes.tsv | 2,240 | 056bef0d31fac9ff4d4764b2da26f56e |
 | TableS5_telomeres.tsv | 1,963 | ca3c88938bb0b190b8050ba1f452ed62 |
 | TableS7_coverage_zero_runs.tsv | 364 | 4c121027351a5196b7e49b27a139afad |

@@ -56,7 +56,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 16_synteny_rearrangements.py | 6,792 | 1e37a1f0f37b7a57468bd7db2b89d5f5 |
 | apply_curation.py | 4,948 | 339e906f9230d2dc399f59f7d1b6ac00 |
 | asm_stats.py | 1,276 | dcbea278fa3dbca594c9dd18763683d6 |
-| make_manuscript_figs_tables.py | 27,347 | e0d1b265eba07fbf573f779f454e442a |
+| make_manuscript_figs_tables.py | 27,347 | f5e72183de0e30c76940899799bbf08e |
 | make_datafile1_pdf.py | 2,976 | 82cc305b215ef5ca1108c6f0133371d3 |
 | 17_mito_gb2gff3.py | 4,579 | 2f1aff51460a00d5ef21bef4a4ee39fd |
 | disk_watch.sh | 551 | 999592ee5f5207ea337c108d987d7204 |

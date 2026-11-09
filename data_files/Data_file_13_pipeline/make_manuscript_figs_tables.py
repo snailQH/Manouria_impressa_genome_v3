@@ -142,7 +142,7 @@ def ebp(k, q):
     L=[l for _, l in asm[k]]; cn50 = {'Mimp_v3': 86871185, 'hap1': 36595271, 'hap2': 28880847, 'v2.4': 86871185}[k]
     return f"{int(math.log10(cn50))}.{int(math.log10(nx(L, 50)))}.Q{int(float(q))}"
 rows.append(['EBP quality notation', ebp('Mimp_v3', qv), ebp('hap1', hq['asm1']), ebp('hap2', hq['asm2']), ebp('v2.4', 67.43)])
-rows.append(['Accession', 'GWHHIVU00000000.2 [[PENDING]]', '[[PENDING]]', '[[PENDING]]', 'GWHHIVU00000000.1'])
+rows.append(['Accession', 'GWHHIVU00000000.2', 'GWHKKMH00000000.1', 'GWHKKMI00000000.1', 'GWHHIVU00000000.1'])
 seq = [['Library', 'Platform', 'Reads / pairs', 'Bases (Gb)', 'Mean / N50 read length (bp)', 'Coverage', 'Accession'],
        ['PacBio HiFi (liver)', 'PacBio Revio, 4 SMRT cells, ccs 7.0.0', '3,618,287 reads (3,618,282 after adapter screen)', '68.55', '18,945 / 18,784', '28.2× of assembly; 30× of k-mer estimate', 'CRR1746698 (CRA024571)'],
        ['Hi-C (liver, MboI)', 'MGI DNBSEQ, 2 × 150 bp', '32,770,909 pairs', '9.83', '150', '20,760,724 valid pairs (63.4 %)', 'CRR1746699 (CRA024571)'],

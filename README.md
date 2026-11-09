@@ -25,7 +25,8 @@ The scripts, environments and protocol log behind the chromosome-level, haplotyp
 | Hi-C reads (liver, MboI) | GSA CRA024571, run CRR1746699 |
 | RNA-seq heart (IT3) / lung (IT4) | GSA CRA024586, runs CRR1747397 / CRR1747398 (BioSamples SAMC4973532 / SAMC4976828) |
 | Reference assembly + annotation | NGDC GWH GWHHIVU00000000.2 (version .1 = preliminary provider assembly) |
-| hap1, hap2, mitogenome | GWH, same BioProject (accessions pending) |
+| hap1, hap2 | GWH GWHKKMH00000000.1, GWHKKMI00000000.1 (BioProject PRJCA038476) |
+| mitogenome | NGDC GenBase (accession pending); Data file 7 |
 | Data files 1–13 of the Data Note (extended description PDF, tables, curation evidence, QC, haplotype/mitogenome/synteny/repeat/annotation results, this pipeline) | `data_files/` here; Zenodo doi:10.5281/zenodo.24056325 |
 
 ## Layout
