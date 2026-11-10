@@ -42,6 +42,7 @@ b5416e722248b3ff5b1ed3bf2e8046fb  03f_hic_stats.sbatch
 ac29ceb1c27275d5c0663375a54747ef  12_repeat_landscape.py
 2d601defa5c234aeae25181f880e50c1  name_chromosomes.py
 49c1a4dae4ed536a713987105b1b47ae  06i_gff3_gwh_fix.py
+d312b1523a5a233ae3587a2693b5fad8  17b_mito_annotation_curated.py
 ea55c5984458eeac3b8ab7779e070477  make_manuscript_docx.py
 46eba0b32bf9d7bc79c5ce3524bec492  09_telomere.py
 fc47bd6ea2ecd3be23ccf428429ab64e  refnumber.py
@@ -54,7 +55,7 @@ f5e72183de0e30c76940899799bbf08e  make_manuscript_figs_tables.py
 2f1aff51460a00d5ef21bef4a4ee39fd  17_mito_gb2gff3.py
 999592ee5f5207ea337c108d987d7204  disk_watch.sh
 03c2938a9f03d8d4c42e5c11eb64d128  fcs_gx_chain.sh
-94eb8c02233d3bcd342007e82d9204f7  collect_manuscript_inputs.sh
+8496043b3f292ffe8312c738a1a59d9a  collect_manuscript_inputs.sh
 11ca2ffb738ff14193932935545d0620  software_versions.sh
 fb605ba2ff2ad634c7889a9014995993  release_qc_chain.sh
 aa089511045cebe3cd53c75adf329002  chain_annotation.sh
@@ -66,6 +67,6 @@ ff8ee507ec652dee4b072a97691ddb54  eggnog.yml
 c4f3cc8013d33f59a05d773414d814ab  haphic.yml
 590b56190882cd0c008f5eee3ff5e196  ncrna.yml
 2c43df286b81004c140752c86ad34217  genomeqc.yml
-de0f474fb817429b9bda5e8c9a704e79  PROTOCOL_v3.md
+42742b877934a96a975f4b1f48d62cb9  PROTOCOL_v3.md
 9ca52234240e8ed7a161e1d2bf8e1f30  software_versions.tsv
 b50aa80ad0db6e342f9d3c1b32b443d6  genome_assembly_workflow.html

@@ -50,6 +50,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 12_repeat_landscape.py | 2,928 | ac29ceb1c27275d5c0663375a54747ef |
 | name_chromosomes.py | 2,476 | 2d601defa5c234aeae25181f880e50c1 |
 | 06i_gff3_gwh_fix.py | 6,415 | 49c1a4dae4ed536a713987105b1b47ae |
+| 17b_mito_annotation_curated.py | 9,779 | d312b1523a5a233ae3587a2693b5fad8 |
 | make_manuscript_docx.py | 10,296 | ea55c5984458eeac3b8ab7779e070477 |
 | 09_telomere.py | 1,108 | 46eba0b32bf9d7bc79c5ce3524bec492 |
 | refnumber.py | 2,010 | fc47bd6ea2ecd3be23ccf428429ab64e |
@@ -62,7 +63,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 17_mito_gb2gff3.py | 4,579 | 2f1aff51460a00d5ef21bef4a4ee39fd |
 | disk_watch.sh | 551 | 999592ee5f5207ea337c108d987d7204 |
 | fcs_gx_chain.sh | 1,400 | 03c2938a9f03d8d4c42e5c11eb64d128 |
-| collect_manuscript_inputs.sh | 5,325 | 94eb8c02233d3bcd342007e82d9204f7 |
+| collect_manuscript_inputs.sh | 5,381 | 8496043b3f292ffe8312c738a1a59d9a |
 | software_versions.sh | 2,236 | 11ca2ffb738ff14193932935545d0620 |
 | release_qc_chain.sh | 1,054 | fb605ba2ff2ad634c7889a9014995993 |
 | chain_annotation.sh | 828 | aa089511045cebe3cd53c75adf329002 |
@@ -74,6 +75,6 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | haphic.yml | 1,337 | c4f3cc8013d33f59a05d773414d814ab |
 | ncrna.yml | 5,875 | 590b56190882cd0c008f5eee3ff5e196 |
 | genomeqc.yml | 3,215 | 2c43df286b81004c140752c86ad34217 |
-| PROTOCOL_v3.md | 42,384 | de0f474fb817429b9bda5e8c9a704e79 |
+| PROTOCOL_v3.md | 43,960 | 42742b877934a96a975f4b1f48d62cb9 |
 | software_versions.tsv | 809 | 9ca52234240e8ed7a161e1d2bf8e1f30 |
 | genome_assembly_workflow.html | 39,819 | b50aa80ad0db6e342f9d3c1b32b443d6 |
