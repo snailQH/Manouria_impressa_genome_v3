@@ -42,7 +42,7 @@ b5416e722248b3ff5b1ed3bf2e8046fb  03f_hic_stats.sbatch
 ac29ceb1c27275d5c0663375a54747ef  12_repeat_landscape.py
 2d601defa5c234aeae25181f880e50c1  name_chromosomes.py
 49c1a4dae4ed536a713987105b1b47ae  06i_gff3_gwh_fix.py
-d312b1523a5a233ae3587a2693b5fad8  17b_mito_annotation_curated.py
+ab08ade3ee4471ff58c88244a2ef71cf  17b_mito_annotation_curated.py
 ea55c5984458eeac3b8ab7779e070477  make_manuscript_docx.py
 46eba0b32bf9d7bc79c5ce3524bec492  09_telomere.py
 fc47bd6ea2ecd3be23ccf428429ab64e  refnumber.py

@@ -50,7 +50,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | 12_repeat_landscape.py | 2,928 | ac29ceb1c27275d5c0663375a54747ef |
 | name_chromosomes.py | 2,476 | 2d601defa5c234aeae25181f880e50c1 |
 | 06i_gff3_gwh_fix.py | 6,415 | 49c1a4dae4ed536a713987105b1b47ae |
-| 17b_mito_annotation_curated.py | 9,779 | d312b1523a5a233ae3587a2693b5fad8 |
+| 17b_mito_annotation_curated.py | 9,955 | ab08ade3ee4471ff58c88244a2ef71cf |
 | make_manuscript_docx.py | 10,296 | ea55c5984458eeac3b8ab7779e070477 |
 | 09_telomere.py | 1,108 | 46eba0b32bf9d7bc79c5ce3524bec492 |
 | refnumber.py | 2,010 | fc47bd6ea2ecd3be23ccf428429ab64e |

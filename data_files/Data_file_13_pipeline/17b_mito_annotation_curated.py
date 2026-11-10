@@ -111,10 +111,11 @@ for typ, gene, prod, strand, parts, x in F:
     if typ == 'CDS':
         extra = ';transl_table=2' + (f';transl_except=(pos:{x["te"]},aa:TERM)' if 'te' in x else '') + (';exception=ribosomal slippage' if gene == 'ND3' else '')
     note = f';Note={x["note"]}' if 'note' in x else ''
-    run = 0
-    for a, b in (parts if strand == '+' else parts[::-1]):
+    run = 0; segs = parts if strand == '+' else parts[::-1]
+    for k, (a, b) in enumerate(segs, 1):
         phase = str((3 - run % 3) % 3) if typ == 'CDS' else '.'
-        g.append(f'{seqid}\tcurated\t{typ}\t{a}\t{b}\t.\t{strand}\t{phase}\tID={cid};Parent={gid};Name={gene};product={prod};gene={gene}{extra}{note}'); run += b - a + 1
+        sid = cid if len(segs) == 1 else f'{cid}.{k}'      # the ND3 frameshift CDS has two segments: NGDC validators require unique IDs per line
+        g.append(f'{seqid}\tcurated\t{typ}\t{a}\t{b}\t.\t{strand}\t{phase}\tID={sid};Parent={gid};Name={gene};product={prod};gene={gene}{extra}{note}'); run += b - a + 1
 open(out + '.gff3', 'w').write('\n'.join(g) + '\n')
 with open(out + '.proteins.faa', 'w') as w:
     for gene, prot, n in prots: w.write(f'>{seqid}_{gene} {len(prot)} aa; CDS {n} nt\n{prot}\n')

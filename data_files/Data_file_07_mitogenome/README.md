@@ -7,7 +7,7 @@ Genome: *Manouria impressa* Mimp_v3 (BioProject PRJCA038476; BioSample SAMC49734
 | file | bytes | md5 |
 |---|---|---|
 | mito_annotation.png | 80,980 | 44152fa36e508a576aacea812d0b9783 |
-| mito_annotation.gff3 | 11,509 | 24f6c1e1189bc5b43e4a535551be87ae |
+| mito_annotation.gff3 | 11,513 | 16f2fc66213d380b7ec95bda60932ee9 |
 | mito_annotation.tbl | 5,241 | b06af075671149ea149453fcfb058666 |
 | mito_annotation.gb | 35,052 | 01ec698bfec1cc400cc8e449dbc957e1 |
 | mito_array_copynumber_hist.tsv | 111 | 6b9515f19561496b573cc134b25230e0 |
