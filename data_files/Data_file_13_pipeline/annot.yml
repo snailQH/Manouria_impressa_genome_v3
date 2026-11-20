@@ -1,0 +1,12 @@
+name: annot
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - _openmp_mutex=4.5
+  - libgcc=16.2.0
+  - libgomp=16.2.0
+  - libzlib=1.3.2
+  - miniprot=0.13
+  - zlib=1.3.2

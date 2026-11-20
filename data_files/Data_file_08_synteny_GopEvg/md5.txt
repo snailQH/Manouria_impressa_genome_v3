@@ -1,0 +1,9 @@
+6d5de6be6351d157ee7b609dc85db8a2  TableS12_synteny_GopEvg.tsv
+446614cbb2ecb50436e9e949ae2f4256  Mimp_v3_vs_GopEvg_blocks.tsv
+ef4cac0ef3ab084493d5fc1ac6494eef  Mimp_v3_vs_GopEvg_composition.tsv
+730bfd9a5238ef55bf698680eaead18b  Mimp_v3_vs_GopEvg_breakpoints.tsv
+36e2de121c399b62cd1f47c3931162bf  dotplot_Mimp_v3_vs_GopEvg.png
+ee7746af93432f79b46ab7d543a2c989  hic_map_Mimp_v3_pub.png
+1afccbe4eeb4c5489e98eec05f0d8cc7  hic_map_Mimp_v3_hap1.png
+719e7227d5da2c8fb2fe61e3a3d13cc9  hic_map_Mimp_v3_hap2.png
+7a4d3c6e7063de43840ddfbadc810f5d  Mimp_v3.names.tsv

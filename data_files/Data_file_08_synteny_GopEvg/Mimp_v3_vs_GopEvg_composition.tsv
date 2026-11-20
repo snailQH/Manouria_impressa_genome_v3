@@ -1,0 +1,27 @@
+chromosome	length	ref_chromosomes_(aligned_Mb_in_blocks_>=1Mb)	n_blocks	strand_switches	inter_chromosomal_junctions
+chr1	382984538	GopEvg chr1 369.4	4	0	0
+chr2	302283890	GopEvg chr2 296.2; GopEvg chr19 1.5	7	0	2
+chr3	217060775	GopEvg chr3 216.7	2	0	0
+chr4	154305643	GopEvg chr4 153.4	3	0	0
+chr5	147660043	GopEvg chr5 146.1	2	0	0
+chr6	138646552	GopEvg chr6 136.9	2	0	0
+chr7	131313429	GopEvg chr7 131.3	2	0	0
+chr8	113402578	GopEvg chr8 113.2	2	0	0
+chr9	106468758	GopEvg chr9 106.4	2	0	0
+chr10	86871185	GopEvg chr10 82.6	2	0	0
+chr11	82063608	GopEvg chr11 80.2	4	1	0
+chr12	57158957	GopEvg chr14 33.3; GopEvg chr21 10.0	7	0	1
+chr13	47446191	GopEvg chr12 44.2	1	0	0
+chr14	38444000	GopEvg chr15 29.8	1	0	0
+chr15	34274569	GopEvg chr13 33.9	1	0	0
+chr16	29697000	GopEvg chr16 26.1	1	0	0
+chr17	27097147		0	0	0
+chr18	26386266	GopEvg chr19 18.6	1	0	0
+chr19	26253470	GopEvg chr17 25.4	2	1	0
+chr20	24228010	GopEvg chr18 23.2	1	0	0
+chr21	21674238	GopEvg chr20 20.1	1	0	0
+chr22	20944197	GopEvg chr3 8.5	1	0	0
+chr23	20262317	GopEvg chr22 17.2	2	0	0
+chr24	16509745	GopEvg chr23 15.8	1	0	0
+chr25	16434403		0	0	0
+chr26	14652067	GopEvg chr24 12.6	1	0	0

@@ -1,0 +1,6 @@
+BREAK scaffold_27 at 5748000 (ptg000019c | ptg000109l): scaffold_27 keeps 1 components, scaffold_27_b gets 1
+BREAK scaffold_59 at 927537 (ptg000119l | ptg000192l): scaffold_59 keeps 2 components, scaffold_59_b gets 1
+BREAK scaffold_119 at 126000 (ptg000070l | ptg000070l): scaffold_119 keeps 1 components, scaffold_119_b gets 1
+JOIN scaffold_52 (1,507,752 bp) to start of scaffold_25, orientation - (contacts with T's terminal 1 Mb: first half 242, second half 123)
+JOIN scaffold_60 (1,055,956 bp) to start of scaffold_11, orientation + (contacts with T's terminal 1 Mb: first half 64, second half 95)
+JOIN scaffold_44 (1,854,459 bp) to start of scaffold_7, orientation + (contacts with T's terminal 1 Mb: first half 65, second half 90)

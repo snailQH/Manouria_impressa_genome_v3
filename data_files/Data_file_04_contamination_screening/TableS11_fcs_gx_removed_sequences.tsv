@@ -1,0 +1,90 @@
+assembly	sequence_pre_fcs	length_bp	action	division	coverage	top_taxon
+Mimp_v3	scaffold_6	4355722	EXCLUDE	prok:CFB group bacteria	94	Parabacteroides gordonii
+Mimp_v3	scaffold_8	3955543	EXCLUDE	prok:g-proteobacteria	97	Morganella morganii
+Mimp_v3	scaffold_73	403480	EXCLUDE	prok:CFB group bacteria	90	Parabacteroides gordonii
+Mimp_v3	scaffold_77	364220	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3	scaffold_83	337075	EXCLUDE	prok:CFB group bacteria	93	Parabacteroides gordonii
+Mimp_v3	scaffold_102	237721	EXCLUDE	prok:CFB group bacteria	93	Parabacteroides gordonii
+Mimp_v3	scaffold_104	225130	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3	scaffold_136	145024	EXCLUDE	prok:firmicutes	97	Lactococcus lactis
+Mimp_v3	scaffold_148	125342	EXCLUDE	prok:CFB group bacteria	78	Parabacteroides gordonii
+Mimp_v3	scaffold_153	122164	EXCLUDE	prok:CFB group bacteria	92	Prevotella timonensis
+Mimp_v3	scaffold_155	117375	EXCLUDE	prok:CFB group bacteria	92	Bacteroides neonati
+Mimp_v3	scaffold_162	111071	EXCLUDE	prok:CFB group bacteria	93	Bacteroides neonati
+Mimp_v3	scaffold_178	89161	EXCLUDE	prok:CFB group bacteria	89	Parabacteroides gordonii
+Mimp_v3	scaffold_186	86284	EXCLUDE	prok:CFB group bacteria	85	Parabacteroides gordonii
+Mimp_v3	scaffold_196	78704	EXCLUDE	prok:CFB group bacteria	96	Parabacteroides gordonii
+Mimp_v3	scaffold_213	69286	EXCLUDE	virs:prokaryotic viruses	52	Phage FAKO05_000032F
+Mimp_v3	scaffold_247	55400	EXCLUDE	virs:prokaryotic viruses	83	Alcaligenes phage Piluca
+Mimp_v3	scaffold_252	53849	EXCLUDE	prok:CFB group bacteria	94	Bacteroides luhongzhouii
+Mimp_v3	scaffold_257	51817	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3	scaffold_258	51748	EXCLUDE	prok:firmicutes	94	Lactococcus lactis
+Mimp_v3	scaffold_267	49010	EXCLUDE	prok:firmicutes	100	Lactococcus lactis
+Mimp_v3	scaffold_281	43769	EXCLUDE	prok:CFB group bacteria	95	Bacteroides thetaiotaomicron
+Mimp_v3	scaffold_283	43438	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3	scaffold_284	41304	EXCLUDE	prok:firmicutes	100	Erysipelothrix aquatica
+Mimp_v3	scaffold_285	40996	EXCLUDE	prok:CFB group bacteria	98	Bacteroides neonati
+Mimp_v3	scaffold_295	38436	EXCLUDE	prok:CFB group bacteria	91	Bacteroides ovatus
+Mimp_v3	scaffold_297	38169	EXCLUDE	prok:firmicutes	100	Lactococcus lactis
+Mimp_v3	scaffold_300	37663	EXCLUDE	prok:firmicutes	100	Erysipelothrix aquatica
+Mimp_v3	scaffold_306	35934	EXCLUDE	prok:CFB group bacteria	97	Bacteroides zhangwenhongii
+Mimp_v3	scaffold_310	35266	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3	scaffold_328	31133	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3	scaffold_333	30058	EXCLUDE	prok:CFB group bacteria	96	Bacteroides fluxus
+Mimp_v3	scaffold_341	25522	EXCLUDE	prok:CFB group bacteria	89	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_14	2878	FIX	prok:CFB group bacteria	100	Bacteroides cutis
+Mimp_v3_hap1	h1_scaffold_42	3955543	EXCLUDE	prok:g-proteobacteria	97	Morganella morganii
+Mimp_v3_hap1	h1_scaffold_60	1634941	EXCLUDE	prok:CFB group bacteria	92	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_126	530939	EXCLUDE	prok:CFB group bacteria	95	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_137	475484	EXCLUDE	prok:CFB group bacteria	92	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_139	466805	EXCLUDE	prok:CFB group bacteria	95	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_154	403480	EXCLUDE	prok:CFB group bacteria	91	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_161	372014	EXCLUDE	prok:CFB group bacteria	95	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_163	364220	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_170	333144	EXCLUDE	prok:CFB group bacteria	92	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_219	194133	EXCLUDE	prok:CFB group bacteria	90	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_227	179491	EXCLUDE	prok:CFB group bacteria	96	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_231	164126	EXCLUDE	prok:CFB group bacteria	92	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_235	153266	EXCLUDE	prok:CFB group bacteria	95	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_239	146535	EXCLUDE	prok:CFB group bacteria	93	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_256	125749	EXCLUDE	prok:CFB group bacteria	94	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_263	117576	EXCLUDE	prok:CFB group bacteria	91	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_264	117375	EXCLUDE	prok:CFB group bacteria	92	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_266	111784	EXCLUDE	prok:CFB group bacteria	92	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_282	95943	EXCLUDE	prok:CFB group bacteria	96	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_287	91552	EXCLUDE	prok:firmicutes	95	Lactococcus lactis
+Mimp_v3_hap1	h1_scaffold_290	89161	EXCLUDE	prok:CFB group bacteria	90	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_298	86284	EXCLUDE	prok:CFB group bacteria	82	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_304	81010	EXCLUDE	prok:CFB group bacteria	74	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_307	78704	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_313	74621	EXCLUDE	prok:CFB group bacteria	100	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_318	71199	EXCLUDE	prok:CFB group bacteria	87	Prevotella timonensis
+Mimp_v3_hap1	h1_scaffold_321	69286	EXCLUDE	virs:prokaryotic viruses	51	Phage FAKO05_000032F
+Mimp_v3_hap1	h1_scaffold_329	66122	EXCLUDE	prok:CFB group bacteria	95	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_350	55400	EXCLUDE	virs:prokaryotic viruses	83	Alcaligenes phage Piluca
+Mimp_v3_hap1	h1_scaffold_355	53849	EXCLUDE	prok:CFB group bacteria	94	Bacteroides luhongzhouii
+Mimp_v3_hap1	h1_scaffold_358	53372	EXCLUDE	prok:firmicutes	98	Lactococcus lactis
+Mimp_v3_hap1	h1_scaffold_363	51817	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_364	51748	EXCLUDE	prok:firmicutes	93	Lactococcus lactis
+Mimp_v3_hap1	h1_scaffold_368	50865	EXCLUDE	prok:CFB group bacteria	98	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_376	49010	EXCLUDE	prok:firmicutes	100	Lactococcus lactis
+Mimp_v3_hap1	h1_scaffold_383	47506	EXCLUDE	prok:CFB group bacteria	98	Bacteroides sp. Phil13
+Mimp_v3_hap1	h1_scaffold_391	44849	EXCLUDE	prok:CFB group bacteria	89	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_396	44232	EXCLUDE	prok:CFB group bacteria	85	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_397	43769	EXCLUDE	prok:CFB group bacteria	94	Bacteroides thetaiotaomicron
+Mimp_v3_hap1	h1_scaffold_400	43438	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_401	43120	EXCLUDE	prok:CFB group bacteria	100	Parabacteroides gordonii
+Mimp_v3_hap1	h1_scaffold_406	41304	EXCLUDE	prok:firmicutes	100	Erysipelothrix aquatica
+Mimp_v3_hap1	h1_scaffold_411	38866	EXCLUDE	prok:firmicutes	100	Vagococcus carniphilus
+Mimp_v3_hap1	h1_scaffold_416	38436	EXCLUDE	prok:CFB group bacteria	91	Bacteroides ovatus
+Mimp_v3_hap1	h1_scaffold_419	38169	EXCLUDE	prok:firmicutes	100	Lactococcus lactis
+Mimp_v3_hap1	h1_scaffold_426	35934	EXCLUDE	prok:CFB group bacteria	97	Bacteroides zhangwenhongii
+Mimp_v3_hap1	h1_scaffold_430	35266	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3_hap1	h1_scaffold_438	33801	EXCLUDE	prok:firmicutes	100	Lactococcus lactis
+Mimp_v3_hap2	h2_scaffold_36	3955543	EXCLUDE	prok:g-proteobacteria	97	Morganella morganii
+Mimp_v3_hap2	h2_scaffold_157	415373	EXCLUDE	prok:CFB group bacteria	94	Parabacteroides gordonii
+Mimp_v3_hap2	h2_scaffold_361	45539	EXCLUDE	prok:CFB group bacteria	97	Parabacteroides gordonii
+Mimp_v3_hap2	h2_scaffold_373	40996	EXCLUDE	prok:CFB group bacteria	100	Bacteroides neonati
+Mimp_v3_hap2	h2_scaffold_381	37663	EXCLUDE	prok:firmicutes	100	Erysipelothrix aquatica
+Mimp_v3_hap2	h2_scaffold_399	31091	EXCLUDE	prok:CFB group bacteria	96	Parabacteroides gordonii
+Mimp_v3_hap2	h2_scaffold_400	30058	EXCLUDE	prok:CFB group bacteria	96	Bacteroides fluxus

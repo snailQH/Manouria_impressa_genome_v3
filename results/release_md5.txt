@@ -1,0 +1,4 @@
+4fff7d103c8d6bec5a4aa38734a8e5d9  Mimp_v3.fa
+ebecaccd2149c985518817ea7c39c979  Mimp_v3.agp
+5a886dc738f95e4640dea0115f9065f9  Mimp_v3_hap1.fa
+7d408bf8365e0dab0d564867cd4d3496  Mimp_v3_hap2.fa

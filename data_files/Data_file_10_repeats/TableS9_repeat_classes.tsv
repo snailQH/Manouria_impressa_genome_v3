@@ -1,0 +1,29 @@
+# RepeatMasker 4.1.7-p1 with the RepeatModeler2 library (genome.fa.tbl); second pass with Dfam Tetrapoda on the masked output
+Repeat class	Elements	Length (bp)	Genome (%)
+Retroelements	1,695,960	584,081,421	24.05
+SINEs	425,423	62,283,327	2.56
+Penelope	0	0	0.00
+LINEs	750,067	279,005,737	11.49
+L2/CR1/Rex	633,325	225,288,751	9.28
+R1/LOA/Jockey	1,230	1,217,803	0.05
+R2/R4/NeSL	3,043	3,252,715	0.13
+RTE/Bov-B	16,189	9,615,233	0.40
+L1/CIN4	8,865	2,932,470	0.12
+LTR elements	520,470	242,792,357	10.00
+BEL/Pao	0	0	0.00
+Ty1/Copia	0	0	0.00
+Gypsy/DIRS1	238,055	149,448,366	6.15
+Retroviral	164,211	56,036,448	2.31
+DNA transposons	661,255	184,786,950	7.61
+hobo-Activator	391,016	82,839,547	3.41
+Tc1-IS630-Pogo	41,339	7,275,481	0.30
+En-Spm	0	0	0.00
+MULE-MuDR	0	0	0.00
+PiggyBac	95	57,274	0.00
+Rolling-circles	17,026	2,812,869	0.12
+Unclassified	2,153,699	373,825,168	15.39
+Small RNA	127,670	26,349,439	1.08
+Satellites	2,033	1,230,412	0.05
+Simple repeats	266,788	12,637,271	0.52
+Low complexity	34,854	1,790,134	0.07
+Additional masking, Dfam 3.8 Tetrapoda pass		20,524,009	0.84

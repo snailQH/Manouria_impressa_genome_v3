@@ -1,0 +1,3 @@
+hap1_vs_hap2	aligned_bp=2,210,842,385	SNV=4,572,296 (2.07/kb)	small_indel=573,150 (0.259/kb)	SV>=50bp=50,176
+hap1_vs_primary	aligned_bp=2,289,003,605	SNV=2,340,116 (1.02/kb)	small_indel=293,922 (0.128/kb)	SV>=50bp=26,384
+hap2_vs_primary	aligned_bp=2,313,679,515	SNV=2,210,063 (0.96/kb)	small_indel=281,531 (0.122/kb)	SV>=50bp=24,095

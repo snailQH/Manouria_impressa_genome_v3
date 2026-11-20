@@ -1,0 +1,5 @@
+656076c1a066bbf060c5cd29436760e8  Mimp_v3.hic_stats.tsv
+656076c1a066bbf060c5cd29436760e8  TableS3_hic_statistics.tsv
+e550f34477cd128e342d0f6313b34cf2  summary.txt
+ebf574e1c3ca3aa2c3529930d58bfe81  genomescope_linear_plot.png
+38d831448231c9d0174658bffcb308db  genomescope_log_plot.png

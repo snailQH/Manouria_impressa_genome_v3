@@ -1,0 +1,1 @@
+RNA-seq support (final): >=10 reads 18875/24875 (75.9 %); >=1 read 22490 (90.4 %)

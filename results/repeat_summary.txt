@@ -1,0 +1,1 @@
+interspersed repeats: 47.44 % of genome; LTR 10.00 %, LINE 11.49 %, SINE 2.56 %, DNA 7.61 %, RC 0.12 %, Unknown 15.39 %, Other 0.28 %

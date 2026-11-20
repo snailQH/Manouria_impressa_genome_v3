@@ -1,0 +1,10 @@
+metric	value	percent_of_pairs
+read_pairs_sequenced	32770909	100
+reads_mapped	55411316	84.5
+reads_uniquely_mapped	46271164	70.6
+pairs_after_dedup_MAPQ1_proper (valid pairs used for scaffolding)	20760724	63.4
+valid_pairs_cis	10056715	48.4
+valid_pairs_cis_ge1kb	6462988	31.1
+valid_pairs_cis_ge20kb	5461637	26.3
+valid_pairs_trans	10704009	51.6
+note	cis/trans measured on primary contigs (460 contigs), so trans includes intra-chromosomal inter-contig pairs	
